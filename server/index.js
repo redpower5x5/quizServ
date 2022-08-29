@@ -1,7 +1,7 @@
 const httpServer = require("http").createServer();
 const io = require("socket.io")(httpServer, {
   cors: {
-    origin: "http://192.168.0.100:8080",
+    origin: "https://fronted-adress-gena.ru:8080",
   },
 });
 
