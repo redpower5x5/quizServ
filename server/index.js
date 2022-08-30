@@ -119,6 +119,7 @@ io.on("connection", (socket) => {
   
   // receive answer
   socket.on("answer", (score) => {
+    console.log(`${socket.username} answered ${score}`);
     answersStore.saveAnswer({ userID: socket.userID, score: score });
   });
 
