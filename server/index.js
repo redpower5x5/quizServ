@@ -29,6 +29,8 @@ let sortedScores = null;
 
 var countDown = null;
 
+const adminToken = "8w6VBYgcY9cGcH8Q";
+
 io.use((socket, next) => {
   const sessionID = socket.handshake.auth.sessionID;
   if (sessionID) {
@@ -60,6 +62,11 @@ io.on("connection", (socket) => {
     username: socket.username,
     connected: true,
   });
+
+  // emit if user is admin their rights
+  if (socket.username === adminToken) {
+    socket.emit("admin");
+  }
 
   // emit session details
   socket.emit("session", {
@@ -120,7 +127,7 @@ io.on("connection", (socket) => {
   // receive answer
   socket.on("answer", (score) => {
     console.log(`${socket.username} answered ${score}`);
-    answersStore.saveAnswer({ userID: socket.userID, score: score });
+    answersStore.saveAnswer({ userID: socket.username, score: score });
   });
 
   // receive setState message
