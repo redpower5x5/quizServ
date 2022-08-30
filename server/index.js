@@ -37,6 +37,7 @@ io.use((socket, next) => {
       socket.sessionID = sessionID;
       socket.userID = session.userID;
       socket.username = session.username;
+      console.log(`${socket.username} connected again`);
       return next();
     }
   }
