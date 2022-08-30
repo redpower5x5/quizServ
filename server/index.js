@@ -1,9 +1,11 @@
 const httpServer = require("http").createServer();
-const io = require("socket.io")(httpServer, {
-  cors: {
-    origin: "https://fronted-adress-gena.ru:8080",
-  },
-});
+const io = require("socket.io")(httpServer);
+
+// {
+//   cors: {
+//     origin: "https://fronted-adress-gena.ru:8080",
+//   },
+// }
 
 const crypto = require("crypto");
 const randomId = () => crypto.randomBytes(8).toString("hex");
