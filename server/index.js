@@ -52,6 +52,7 @@ io.use((socket, next) => {
 });
 
 io.on("connection", (socket) => {
+  console.log("connection");
   // persist session
   sessionStore.saveSession(socket.sessionID, {
     userID: socket.userID,
