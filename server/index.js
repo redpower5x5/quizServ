@@ -205,6 +205,6 @@ io.on("connection", (socket) => {
 
 const PORT = process.env.PORT || 8765;
 
-httpServer.listen(PORT, () =>
+httpServer.listen(PORT, '0.0.0.0', () =>
   console.log(`server listening at http://localhost:${PORT}`)
 );
