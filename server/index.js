@@ -203,7 +203,7 @@ io.on("connection", (socket) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8765;
 
 httpServer.listen(PORT, () =>
   console.log(`server listening at http://localhost:${PORT}`)
