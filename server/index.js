@@ -189,6 +189,7 @@ io.on("connection", (socket) => {
       timer = 20.0;
       // clear leaderboard
       answersStore.resetGame();
+      sessionStore.clearAllSessions();
       // broadcast waiting
       socket.broadcast.emit("waiting");
       currentState = states.WAITIGUSERS;
