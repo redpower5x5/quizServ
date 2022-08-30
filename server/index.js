@@ -42,6 +42,7 @@ io.use((socket, next) => {
   }
   const username = socket.handshake.auth.username;
   if (!username) {
+    console.log("No username");
     return next(new Error("invalid username"));
   }
   socket.sessionID = randomId();
