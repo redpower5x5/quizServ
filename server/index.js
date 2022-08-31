@@ -132,6 +132,8 @@ io.on("connection", (socket) => {
 
   // receive setState message
   socket.on("setState", (state) => {
+    // showing question
+    console.log(`$admin set state to ${state}`);
     if (state === states.SHOWQUESTION) {
       // reset local scores
       sortedScores = null;
@@ -144,7 +146,7 @@ io.on("connection", (socket) => {
       // start timer
       countDown = setInterval(() => {
         timer -= 0.1;
-        if(timer === 0.0) {
+        if(timer < 0) {
           // stop timer
           timer = 20.0;
           // get sorted scores
@@ -162,6 +164,8 @@ io.on("connection", (socket) => {
         }
       }, 100);
     } else if (state === states.SHOWRESULTS) {
+      // interupting cuestion, showing results
+      console.log(`$admin set state to ${state}`);
       // clear timer
       if(countDown !== null) {
         clearInterval(countDown);
@@ -178,6 +182,7 @@ io.on("connection", (socket) => {
       // switch to next question
       qurrentQuestionId++;
     } else if (state === states.WAITIGUSERS) {
+      console.log(`$admin resets game`);
       // reset game
       qurrentQuestionId = 0;
       sortedScores = null;
