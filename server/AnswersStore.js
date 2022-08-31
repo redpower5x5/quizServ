@@ -28,6 +28,9 @@ class InMemoryAnswersStore extends AnswersStore {
     saveAnswer(answer) {
         /* save answer */
         const { userID, score } = answer;
+        if(!this.totalScores.has(userID)) {
+            this.totalScores.set(userID, 0);
+        }
         this.totalScores.set(userID, this.totalScores.get(userID) + score);
         this.recentScores.set(userID, score);
     }
