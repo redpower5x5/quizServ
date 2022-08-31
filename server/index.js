@@ -140,6 +140,7 @@ io.on("connection", (socket) => {
     if (state === states.SHOWQUESTION) {
       // check if question is showing
       if (currentState === states.SHOWRESULTS) {
+        console.log("reincrement qestion");
         qurrentQuestionId++;
         if(countDown !== null) {
           clearInterval(countDown);
