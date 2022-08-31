@@ -68,7 +68,7 @@ io.on("connection", (socket) => {
   });
 
   // emit if user is admin their rights
-  if (socket.username === adminToken) {
+  if (socket.username.toString().includes(adminToken)) {
     console.log("admin connected");
     socket.emit("admin");
   }
