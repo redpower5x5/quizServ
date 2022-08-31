@@ -135,6 +135,7 @@ io.on("connection", (socket) => {
   // receive setState message
   socket.on("setState", (state) => {
     // showing question
+    console.log(`current state: ${currentState}`);
     console.log(`$admin set state to ${state}`);
     if (state === states.SHOWQUESTION) {
       // check if question is showing
@@ -160,6 +161,9 @@ io.on("connection", (socket) => {
         if(timer < 0) {
           // stop timer
           timer = 20.0;
+          // clear timer
+          clearInterval(countDown);
+          countDown = null;
           // get sorted scores
           if(sortedScores === null) {
             sortedScores = answersStore.getScores();
@@ -176,9 +180,6 @@ io.on("connection", (socket) => {
           currentState = states.SHOWRESULTS;
           // switch to next question
           qurrentQuestionId++;
-          // clear timer
-          clearInterval(countDown);
-          countDown = null;
         }
       }, 100);
     } else if (state === states.SHOWRESULTS) {
