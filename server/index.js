@@ -135,6 +135,14 @@ io.on("connection", (socket) => {
     // showing question
     console.log(`$admin set state to ${state}`);
     if (state === states.SHOWQUESTION) {
+      // check if question is showing
+      if (currentState === states.SHOWRESULTS) {
+        qurrentQuestionId++;
+        if(countDown !== null) {
+          clearInterval(countDown);
+          countDown = null;
+        }
+      }
       // reset local scores
       sortedScores = null;
       answersStore.resetRecentScores();
@@ -176,11 +184,19 @@ io.on("connection", (socket) => {
       if(sortedScores === null) {
         sortedScores = answersStore.getScores();
       }
-      // broadcast results
-      socket.broadcast.emit("results", sortedScores);
-      currentState = states.SHOWRESULTS;
       // switch to next question
       qurrentQuestionId++;
+      if (qurrentQuestionId > answersStore.getMaxQuestionId()) {
+        // no more questions, final
+        currentState = states.WAITIGUSERS;
+        // broadcast final results
+        socket.broadcast.emit("finalResults", sortedScores);
+      } else {
+        // broadcast results
+        socket.broadcast.emit("results", sortedScores);
+      }
+      // set state to show results
+      currentState = states.SHOWRESULTS;
     } else if (state === states.WAITIGUSERS) {
       console.log(`$admin resets game`);
       // reset game

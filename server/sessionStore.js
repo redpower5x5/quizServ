@@ -12,7 +12,7 @@ class InMemorySessionStore extends SessionStore {
   }
 
   clearAllSessions() {
-    this.sessions.clear();
+    this.sessions = new Map();
   }
 
   findSession(id) {
