@@ -153,6 +153,7 @@ io.on("connection", (socket) => {
         question: answersStore.getQuestion(qurrentQuestionId), 
         timer: timer
       });
+      currentState = states.SHOWQUESTION;
       // start timer
       countDown = setInterval(() => {
         timer -= 0.1;
