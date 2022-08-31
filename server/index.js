@@ -18,6 +18,7 @@ const states = {
   SHOWQUESTION: "SHOWQUESTION",
   RESULTS: "SHOWRESULTS",
   WAITIGUSERS: "WAITIGUSERS",
+  FINAL: "FINAL",
 };
 let currentState = states.WAITIGUSERS;
 
@@ -94,6 +95,8 @@ io.on("connection", (socket) => {
     socket.emit("results", sortedScores);
   } else if (currentState === states.WAITIGUSERS) {
     socket.emit("waiting");
+  } else if (currentState === states.FINAL) {
+    socket.emit("finalResults", sortedScores);
   }
 
 
@@ -172,9 +175,11 @@ io.on("connection", (socket) => {
             sortedScores = answersStore.getScores();
             console.log(sortedScores);
           }
+          // switch to next question
+          qurrentQuestionId++;
           if (qurrentQuestionId > answersStore.getMaxQuestionId()) {
             // no more questions, final
-            currentState = states.WAITIGUSERS;
+            currentState = states.FINAL;
             // broadcast final results
             socket.broadcast.emit("finalResults", sortedScores);
           } else {
@@ -182,8 +187,6 @@ io.on("connection", (socket) => {
             socket.broadcast.emit("results", sortedScores);
           }
           currentState = states.RESULTS;
-          // switch to next question
-          qurrentQuestionId++;
         }
       }, 100);
     } else if (state === states.RESULTS) {
@@ -205,7 +208,7 @@ io.on("connection", (socket) => {
       qurrentQuestionId++;
       if (qurrentQuestionId > answersStore.getMaxQuestionId()) {
         // no more questions, final
-        currentState = states.WAITIGUSERS;
+        currentState = states.FINAL;
         // broadcast final results
         socket.broadcast.emit("finalResults", sortedScores);
       } else {
