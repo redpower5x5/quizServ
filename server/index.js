@@ -16,14 +16,16 @@ const answersStore = new InMemoryAnswersStore();
 
 const states = {
   SHOWQUESTION: "SHOWQUESTION",
-  SHOWRESULTS: "SHOWRESULTS",
+  RESULTS: "SHOWRESULTS",
   WAITIGUSERS: "WAITIGUSERS",
 };
 let currentState = states.WAITIGUSERS;
 
 let qurrentQuestionId = 1;
 
-let timer = 20.0;
+const initialTimer = 22.0;
+
+let timer = initialTimer;
 
 let sortedScores = null;
 
@@ -85,7 +87,7 @@ io.on("connection", (socket) => {
       question: answersStore.getQuestion(qurrentQuestionId), 
       timer: timer
     });
-  } else if (currentState === states.SHOWRESULTS) {
+  } else if (currentState === states.RESULTS) {
     if(sortedScores === null) {
       sortedScores = answersStore.getScores();
     }
@@ -139,7 +141,7 @@ io.on("connection", (socket) => {
     console.log(`$admin set state to ${state}`);
     if (state === states.SHOWQUESTION) {
       // check if question is showing
-      if (currentState === states.SHOWRESULTS) {
+      if (currentState === states.SHOWQUESTION) {
         console.log("reincrement qestion");
         qurrentQuestionId++;
         if(countDown !== null) {
@@ -161,7 +163,7 @@ io.on("connection", (socket) => {
         timer -= 0.1;
         if(timer < 0) {
           // stop timer
-          timer = 20.0;
+          timer = initialTimer;
           // clear timer
           clearInterval(countDown);
           countDown = null;
@@ -178,13 +180,13 @@ io.on("connection", (socket) => {
             // broadcast results
             socket.broadcast.emit("results", sortedScores);
           }
-          currentState = states.SHOWRESULTS;
+          currentState = states.RESULTS;
           // switch to next question
           qurrentQuestionId++;
         }
       }, 100);
-    } else if (state === states.SHOWRESULTS) {
-      if(currentState !== states.SHOWRESULTS) {
+    } else if (state === states.RESULTS) {
+      if(currentState !== states.RESULTS) {
       // interupting cuestion, showing results
       console.log(`$admin set state to ${state}`);
       // clear timer
@@ -193,7 +195,7 @@ io.on("connection", (socket) => {
         countDown = null;
         console.log("cleared timer");
       }
-      timer = 20.0;
+      timer = initialTimer;
       // get sorted scores
       if(sortedScores === null) {
         sortedScores = answersStore.getScores();
@@ -210,7 +212,7 @@ io.on("connection", (socket) => {
         socket.broadcast.emit("results", sortedScores);
       }
       // set state to show results
-      currentState = states.SHOWRESULTS;
+      currentState = states.RESULTS;
     }
     } else if (state === states.WAITIGUSERS) {
       console.log(`$admin resets game`);
@@ -222,7 +224,7 @@ io.on("connection", (socket) => {
         clearInterval(countDown);
         countDown = null;
       }
-      timer = 20.0;
+      timer = initialTimer;
       // clear leaderboard
       answersStore.resetGame();
       sessionStore.clearAllSessions();
