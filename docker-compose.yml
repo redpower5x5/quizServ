@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  node:
+    build: 
+      context: .
+      dockerfile: dockerfile-nodejs
+    ports:
+      - "8765:8765"
+    restart: always
+  ngnix:
+    build:
+      context: .
+      dockerfile: dockerfile-ngnx
+    ports:
+      - "2121:80"
+    restart: always
+    depends_on:
+      - node
