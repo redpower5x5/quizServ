@@ -11,7 +11,7 @@ const crypto = require("crypto");
 const randomId = () => crypto.randomBytes(8).toString("hex");
 const { InMemorySessionStore } = require("./sessionStore");
 const sessionStore = new InMemorySessionStore();
-const { InMemoryAnswersStore } = require("./answersStore");
+const { InMemoryAnswersStore } = require("./AnswersStore");
 const answersStore = new InMemoryAnswersStore();
 
 const states = {
