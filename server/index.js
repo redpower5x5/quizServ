@@ -21,7 +21,7 @@ const states = {
 };
 let currentState = states.WAITIGUSERS;
 
-let qurrentQuestionId = 0;
+let qurrentQuestionId = 1;
 
 let timer = 20.0;
 
@@ -65,6 +65,7 @@ io.on("connection", (socket) => {
 
   // emit if user is admin their rights
   if (socket.username === adminToken) {
+    console.log("admin connected");
     socket.emit("admin");
   }
 
@@ -161,8 +162,15 @@ io.on("connection", (socket) => {
           if(sortedScores === null) {
             sortedScores = answersStore.getScores();
           }
-          // broadcast results
-          socket.broadcast.emit("results", sortedScores);
+          if (qurrentQuestionId > answersStore.maxQuestions) {
+            // no more questions, final
+            currentState = states.WAITIGUSERS;
+            // broadcast final results
+            socket.broadcast.emit("finalResults", sortedScores);
+          } else {
+            // broadcast results
+            socket.broadcast.emit("results", sortedScores);
+          }
           currentState = states.SHOWRESULTS;
           // switch to next question
           qurrentQuestionId++;
@@ -172,6 +180,7 @@ io.on("connection", (socket) => {
         }
       }, 100);
     } else if (state === states.SHOWRESULTS) {
+      if(currentState !== states.SHOWRESULTS) {
       // interupting cuestion, showing results
       console.log(`$admin set state to ${state}`);
       // clear timer
@@ -186,6 +195,8 @@ io.on("connection", (socket) => {
       }
       // switch to next question
       qurrentQuestionId++;
+      console.log(`qurrentQuestionId: ${qurrentQuestionId}`);
+      console.log(`maxQuestions: ${answersStore.maxQuestions}`);
       if (qurrentQuestionId > answersStore.maxQuestions) {
         // no more questions, final
         currentState = states.WAITIGUSERS;
@@ -197,10 +208,11 @@ io.on("connection", (socket) => {
       }
       // set state to show results
       currentState = states.SHOWRESULTS;
+    }
     } else if (state === states.WAITIGUSERS) {
       console.log(`$admin resets game`);
       // reset game
-      qurrentQuestionId = 0;
+      qurrentQuestionId = 1;
       sortedScores = null;
       // clear timer
       if(countDown !== null) {
