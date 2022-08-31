@@ -170,6 +170,7 @@ io.on("connection", (socket) => {
           // get sorted scores
           if(sortedScores === null) {
             sortedScores = answersStore.getScores();
+            console.log(sortedScores);
           }
           if (qurrentQuestionId > answersStore.getMaxQuestionId()) {
             // no more questions, final
