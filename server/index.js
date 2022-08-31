@@ -186,7 +186,7 @@ io.on("connection", (socket) => {
       }
       // switch to next question
       qurrentQuestionId++;
-      if (qurrentQuestionId > answersStore.getMaxQuestionId()) {
+      if (qurrentQuestionId > answersStore.maxQuestions) {
         // no more questions, final
         currentState = states.WAITIGUSERS;
         // broadcast final results

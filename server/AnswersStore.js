@@ -1,11 +1,11 @@
 /* abstract */ class AnswersStore {
+    getMaxQuestionId() {}
     getQuestion(id) {}
     saveAnswer(answer) {}
     resetRecentScores() {}
     resetGame() {}
     sortScores() {}
     getScores() {}
-    getMaxQuestionId() {}
   }
 
 class InMemoryAnswersStore extends AnswersStore {
@@ -24,7 +24,6 @@ class InMemoryAnswersStore extends AnswersStore {
     getQuestion(id) {
         return this.quizData.questions.find(q => q.question_id === id);
     }
-
 
     saveAnswer(answer) {
         /* save answer */
