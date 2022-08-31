@@ -231,10 +231,13 @@ io.on("connection", (socket) => {
       timer = initialTimer;
       // clear leaderboard
       answersStore.resetGame();
+      console.log('game reset');
       sessionStore.clearAllSessions();
+      console.log('sessions cleared');
       // broadcast waiting
       socket.broadcast.emit("waiting");
       currentState = states.WAITIGUSERS;
+      console.log(`current state: ${currentState}`);
     }
   });
 
