@@ -30,8 +30,7 @@ let sortedScores = null;
 var countDown = null;
 
 const adminToken = "8w6VBYgcY9cGcH8Q";
-let test = answersStore.getMaxQuestionId()
-console.log(test);
+
 
 io.use((socket, next) => {
   const sessionID = socket.handshake.auth.sessionID;
@@ -164,7 +163,7 @@ io.on("connection", (socket) => {
           if(sortedScores === null) {
             sortedScores = answersStore.getScores();
           }
-          if (qurrentQuestionId > answersStore.maxQuestions) {
+          if (qurrentQuestionId > answersStore.getMaxQuestionId()) {
             // no more questions, final
             currentState = states.WAITIGUSERS;
             // broadcast final results
@@ -198,7 +197,6 @@ io.on("connection", (socket) => {
       }
       // switch to next question
       qurrentQuestionId++;
-      console.log(`qurrentQuestionId: ${qurrentQuestionId}`);
       if (qurrentQuestionId > answersStore.getMaxQuestionId()) {
         // no more questions, final
         currentState = states.WAITIGUSERS;
