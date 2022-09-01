@@ -2,102 +2,102 @@
     "questions": [
       {
         "question_id": 1,
-        "question_text": "what?",
+        "question_text": "Какого языка программирования НЕ существует?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "text",
+            "text" : "LOLCODE",
             "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "text1",
+            "text" : "BruhLang",
             "correct" : true
           },
           {
             "answer_id": 3,
-            "text" : "text2",
+            "text" : "Chicken",
             "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "text3",
+            "text" : "Brainfuck",
             "correct" : false
           }
         ]
       },
       {
         "question_id": 2,
-        "question_text": "suka",
+        "question_text": "мы создали этот квиз за...",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "text",
+            "text" : "три дня",
             "correct" : true
           },
           {
             "answer_id": 2,
-            "text" : "text1",
+            "text" : "две недели",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "text2",
+            "text" : "один месяц",
             "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "text3",
+            "text" : "год",
             "correct" : false
           }
         ]
       },{
         "question_id": 3,
-        "question_text": "blyat",
+        "question_text": "сколько столов в библиотеке?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "text",
-            "correct" : true
+            "text" : "10",
+            "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "text1",
+            "text" : "31",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "text2",
+            "text" : "45",
             "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "text3",
-            "correct" : false
+            "text" : "не знаю",
+            "correct" : true
           }
         ]
       },{
         "question_id": 4,
-        "question_text": "Gena na",
+        "question_text": "В какой программе запущена презентация?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "text",
-            "correct" : true
+            "text" : "телевизор",
+            "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "text1",
+            "text" : "поверпоинт",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "text2",
-            "correct" : false
+            "text" : "фигма",
+            "correct" : true
           },
           {
             "answer_id": 4,
-            "text" : "text3",
+            "text" : "либре офис",
             "correct" : false
           }
         ]
