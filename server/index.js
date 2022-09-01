@@ -39,7 +39,6 @@ io.use((socket, next) => {
   const sessionID = socket.handshake.auth.sessionID;
   if (sessionID) {
     const session = sessionStore.findSession(sessionID);
-    console.log("session", session);
     if (session) {
       socket.sessionID = sessionID;
       socket.userID = session.userID;
@@ -124,12 +123,12 @@ io.on("connection", (socket) => {
   // socket.emit("users", users);
 
   // notify existing users
-  // socket.broadcast.emit("user connected", {
-  //   userID: socket.userID,
-  //   username: socket.username,
-  //   connected: true,
-  //   messages: [],
-  // });
+  socket.broadcast.emit("user connected", {
+    userID: socket.userID,
+    username: socket.username,
+    connected: true,
+    messages: [],
+  });
 
   
   // receive answer
@@ -159,7 +158,9 @@ io.on("connection", (socket) => {
       // broadcast question
       socket.broadcast.emit("question", {
         question: answersStore.getQuestion(qurrentQuestionId), 
-        timer: timer
+        timer: timer,
+        questionId: qurrentQuestionId,
+        totalQuestions: answersStore.getMaxQuestionId(),
       });
       currentState = states.SHOWQUESTION;
       // start timer
@@ -252,11 +253,11 @@ io.on("connection", (socket) => {
       // notify other users
       socket.broadcast.emit("user disconnected", socket.userID);
       // update the connection status of the session
-      sessionStore.saveSession(socket.sessionID, {
-        userID: socket.userID,
-        username: socket.username,
-        connected: false,
-      });
+      // sessionStore.saveSession(socket.sessionID, {
+      //   userID: socket.userID,
+      //   username: socket.username,
+      //   connected: false,
+      // });
     }
   });
 });
