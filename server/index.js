@@ -39,6 +39,7 @@ io.use((socket, next) => {
   const sessionID = socket.handshake.auth.sessionID;
   if (sessionID) {
     const session = sessionStore.findSession(sessionID);
+    console.log("session", session);
     if (session) {
       socket.sessionID = sessionID;
       socket.userID = session.userID;
