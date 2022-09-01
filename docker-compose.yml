@@ -9,11 +9,11 @@ services:
       - "8765:8765"
     restart: always
   ngnix:
-    build:
-      context: .
-      dockerfile: dockerfile-ngnx
+    image: nginx:stable
     ports:
       - "2121:80"
     restart: always
+    volumes:
+      - ./src:/usr/share/nginx/html
     depends_on:
       - node
