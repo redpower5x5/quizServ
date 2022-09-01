@@ -13,6 +13,7 @@ class InMemorySessionStore extends SessionStore {
 
   clearAllSessions() {
     this.sessions = new Map();
+    console.log(this.sessions);
   }
 
   findSession(id) {
