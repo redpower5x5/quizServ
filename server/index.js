@@ -86,7 +86,9 @@ io.on("connection", (socket) => {
   if (currentState === states.SHOWQUESTION) {
     socket.emit("question", {
       question: answersStore.getQuestion(qurrentQuestionId), 
-      timer: timer
+      timer: timer,
+      questionId: qurrentQuestionId,
+      totalQuestions: answersStore.getMaxQuestionId(),
     });
   } else if (currentState === states.RESULTS) {
     if(sortedScores === null) {
@@ -127,7 +129,6 @@ io.on("connection", (socket) => {
     userID: socket.userID,
     username: socket.username,
     connected: true,
-    messages: [],
   });
 
   
