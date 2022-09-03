@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:quiz_app/assets/material_color_generator/material_color_generator.dart';
 import 'package:quiz_app/assets/theming/theme_manager.dart';
-import 'package:quiz_app/logic/game_logic.dart';
+import 'package:quiz_app/logic/game.dart';
 import 'package:quiz_app/models/navigator/navigator_bloc_provider.dart';
 import 'package:quiz_app/ui/play_page/play_page.dart';
 import 'package:quiz_app/ui/result_page/result_page.dart';
