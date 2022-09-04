@@ -6,6 +6,7 @@
     resetGame() {}
     sortScores() {}
     getScores() {}
+    checkRecentScores(userID) {}
   }
 
 class InMemoryAnswersStore extends AnswersStore {
@@ -23,6 +24,10 @@ class InMemoryAnswersStore extends AnswersStore {
 
     getQuestion(id) {
         return this.quizData.questions.find(q => q.question_id === id);
+    }
+
+    checkRecentScores() {
+        return this.recentScores.has(userID);
     }
 
     saveAnswer(answer) {

@@ -90,6 +90,7 @@ io.on("connection", (socket) => {
       timer: timer,
       questionId: qurrentQuestionId,
       totalQuestions: answersStore.getMaxQuestionId(),
+      isAnswered: answersStore.checkRecentScores(socket.username),
     });
   } else if (currentState === states.RESULTS) {
     if(sortedScores === null) {
@@ -163,6 +164,7 @@ io.on("connection", (socket) => {
         timer: timer,
         questionId: qurrentQuestionId,
         totalQuestions: answersStore.getMaxQuestionId(),
+        isAnswered: answersStore.checkRecentScores(socket.username),
       });
       currentState = states.SHOWQUESTION;
       // start timer
