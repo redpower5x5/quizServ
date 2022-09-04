@@ -26,7 +26,7 @@ class InMemoryAnswersStore extends AnswersStore {
         return this.quizData.questions.find(q => q.question_id === id);
     }
 
-    checkRecentScores() {
+    checkRecentScores(userID) {
         return this.recentScores.has(userID);
     }
 
