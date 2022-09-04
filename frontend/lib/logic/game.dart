@@ -29,10 +29,14 @@ class GameLogic {
   Socket? socket;
   String? sessionId;
 
+  Map data = {};
+
   void init() {
 
     //Listen text field
-    loginPageBloc.name.listen((event) => login = event);
+    loginPageBloc.name.listen((event) {
+      login = event;
+    });
 
     //Listen local storage
     localRepository.getId().then((value) {
@@ -76,6 +80,7 @@ class GameLogic {
           loginPageBloc.editName.add(value);
         }
         localRepository.invalidate();
+        loginFromUsername();
       });
     });
 
@@ -124,13 +129,15 @@ class GameLogic {
     socket!.on('question', (d) {
       navigatorBloc.setRoute.add('/play');
 
-      var data = jsonDecode(jsonEncode(d));
+      data = jsonDecode(jsonEncode(d));
       print(jsonEncode(d));
       print(data);
 
       lastQuestion = 'Вопрос ${data['question']['question_id']}';
       playPageBloc.setQuestionId.add(lastQuestion!);
       playPageBloc.setQuestion.add(data['question']['question_text']);
+
+      if (_timer != null) _timer!.cancel();
       startTimer((data['timer']-2)*100);
 
       playPageBloc.setAnswersList.add([
@@ -208,6 +215,7 @@ class GameLogic {
     });
 
     socket!.on('results', (d) {
+      if (_timer != null) _timer!.cancel();
       navigatorBloc.setRoute.add('/result');
       resultPageBloc.setQuestionId.add(lastQuestion??'Ожидание следующего раунда');
       pointMuliplier = 1;
@@ -230,6 +238,7 @@ class GameLogic {
     });
 
     socket!.on('finalResults', (d) {
+      if (_timer != null) _timer!.cancel();
       navigatorBloc.setRoute.add('/result');
       resultPageBloc.setQuestionId.add('Конец игры!');
       pointMuliplier = 1;
@@ -250,11 +259,28 @@ class GameLogic {
       resultPageBloc.setUserList.add(users);
       resultPageBloc.setCurrentUser.add(users[currentUserId]);
     });
+
+    socket!.on('reset', (d) {
+      if (_timer != null) _timer!.cancel();
+      localRepository.invalidate();
+      navigatorBloc.setRoute.add('/login');
+      loginPageBloc.showError.add(null);
+      socket!.clearListeners();
+      socket = null;
+
+      login = '';
+      isAdmin = false;
+      sessionId = null;
+      init();
+    });
   }
 
+  Timer? _timer;
   void startTimer(double milliseconds) {
     int t = (milliseconds/100).floor();
     Timer.periodic(Duration(seconds: 1), (timer) {
+      if (_timer != timer) _timer = timer;
+
       if (t == 1) {
         if (!isAnswered) socket!.emit('answer', 0);
         timer.cancel();
