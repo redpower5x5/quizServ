@@ -77,6 +77,7 @@ io.on("connection", (socket) => {
   socket.emit("session", {
     sessionID: socket.sessionID,
     userID: socket.userID,
+    username: socket.username,
   });
 
   // join the "userID" room
@@ -237,8 +238,8 @@ io.on("connection", (socket) => {
       console.log('game reset');
       sessionStore.clearAllSessions();
       console.log('sessions cleared');
-      // broadcast waiting
-      socket.broadcast.emit("waiting");
+      // broadcast reset
+      socket.broadcast.emit("reset");
       currentState = states.WAITIGUSERS;
       console.log(`current state: ${currentState}`);
     }
