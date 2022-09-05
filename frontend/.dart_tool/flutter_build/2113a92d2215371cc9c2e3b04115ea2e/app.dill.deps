@@ -6,6 +6,9 @@ file:///Users/pitus_anonimous/Documents/GitHub/quizServ/frontend/lib/assets/them
 file:///Users/pitus_anonimous/Documents/GitHub/quizServ/frontend/lib/assets/theming/theme_manager.dart
 file:///Users/pitus_anonimous/Documents/GitHub/quizServ/frontend/lib/logic/data/local_repository.dart
 file:///Users/pitus_anonimous/Documents/GitHub/quizServ/frontend/lib/logic/game.dart
+file:///Users/pitus_anonimous/Documents/GitHub/quizServ/frontend/lib/logic/users/admin_logic.dart
+file:///Users/pitus_anonimous/Documents/GitHub/quizServ/frontend/lib/logic/users/player_logic.dart
+file:///Users/pitus_anonimous/Documents/GitHub/quizServ/frontend/lib/logic/users/user_logic.dart
 file:///Users/pitus_anonimous/Documents/GitHub/quizServ/frontend/lib/main.dart
 file:///Users/pitus_anonimous/Documents/GitHub/quizServ/frontend/lib/models/login_page/login_page_bloc.dart
 file:///Users/pitus_anonimous/Documents/GitHub/quizServ/frontend/lib/models/login_page/login_page_button_state.dart

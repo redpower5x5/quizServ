@@ -6,6 +6,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/assets/theming/theme_manager.dart';
 import 'package:quiz_app/logic/data/local_repository.dart';
+import 'package:quiz_app/logic/users/admin_logic.dart';
+import 'package:quiz_app/logic/users/player_logic.dart';
+import 'package:quiz_app/logic/users/user_logic.dart';
 import 'package:quiz_app/models/login_page/login_page_bloc.dart';
 import 'package:quiz_app/models/login_page/login_page_button_state.dart';
 import 'package:quiz_app/models/navigator/navigator_bloc.dart';
@@ -23,340 +26,157 @@ class GameLogic {
 
   final LocalRepository localRepository = LocalRepository();
 
-  String login = '';
-  bool isAdmin = false;
-
-  Socket? socket;
-  String? sessionId;
-
-  Map data = {};
-
   void init() {
 
-    //Listen text field
-    loginPageBloc.name.listen((event) {
-      login = event;
-    });
+    //jsonDecode(jsonEncode(d))
 
-    //Listen local storage
+    String login = '';
+    UserLogic? userLogic;
+    Socket? socket;
+
     localRepository.getId().then((value) {
       if (value != null) {
-        localRepository.getIsAdmin().then((value2) {
-          if (value2 != null) {
-            isAdmin = value2;
-            sessionId = value;
-            loginFromSessionId();
-          }
-        });
+        loginPageBloc.pushButtonState.add(ButtonState('Подключение', false));
+        socket = loginFromSessionId(value,
+                (p0) {
+                  loginPageBloc.showError.add('Сервер помнит тебя, ожидай подключения!');
+                  loginPageBloc.pushButtonState.add(ButtonState('Ожидание', false));
+                  userLogic = PlayerLogic(loginPageBloc, playPageBloc, resultPageBloc, navigatorBloc);
+                  localRepository.getName().then((value2) => userLogic!.init(value2!));
+                  socket!.clearListeners();
+                  socket!.on('waiting', (d) => userLogic!.waiting());
+                  socket!.on('question', (d) => userLogic!.question(jsonDecode(jsonEncode(d)), socket!));
+                  socket!.on('admin', (d) => userLogic!.admin(socket!, () {}));
+                  socket!.on('results', (d) => userLogic!.results(jsonDecode(jsonEncode(d))));
+                  socket!.on('finalResults', (d) => userLogic!.finalResults(jsonDecode(jsonEncode(d))));
+                  socket!.on('reset', (d) {
+                    navigatorBloc.setRoute.add('/login');
+                    loginPageBloc.showError.add('Игра перезапущенна, перезагрузи страницу');
+                    loginPageBloc.pushButtonState.add(ButtonState('-', false));
+                  });
+            },
+                (p0) {
+                  localRepository.invalidate();
+                  loginPageBloc.showError.add(null);
+                  socket!.close();
+                  socket = null;
+                  loginPageBloc.pushButtonState.add(ButtonState('Поехали', true));
+            }, () {
+              print('admin');
+          userLogic = AdminLogic(loginPageBloc, playPageBloc, resultPageBloc, navigatorBloc);
+          userLogic!.init(login);
+          socket!.clearListeners();
+          userLogic!.admin(socket!, () {});
+          socket!.on('waiting', (d) => userLogic!.waiting());
+          socket!.on('question', (d) => userLogic!.question(jsonDecode(jsonEncode(d)), socket!));
+          socket!.on('admin', (d) => userLogic!.admin(socket!, () {}));
+          socket!.on('results', (d) => userLogic!.results(jsonDecode(jsonEncode(d))));
+          socket!.on('finalResults', (d) => userLogic!.finalResults(jsonDecode(jsonEncode(d))));
+          socket!.on('reset', (d) {
+            navigatorBloc.setRoute.add('/login');
+            loginPageBloc.showError.add('Игра перезапущенна, перезагрузи страницу');
+            loginPageBloc.pushButtonState.add(ButtonState('-', false));
+          });
+            });
       }
     });
 
-    //Listen enter button
     loginPageBloc.enterTap.listen((event) {
       if (login != '') {
-        if (socket == null) {
-          login += ' ${Random().nextInt(8999)+1000}';
-          loginFromUsername();
-        }
+        login += ' ${Random().nextInt(8999)+1000}';
+        loginPageBloc.pushButtonState.add(ButtonState('Подключение', false));
+        socket = loginFromLogin(login,
+                (p0) {
+                  saveSessionId(jsonDecode(jsonEncode(p0))['sessionID'], false, login);
+                  loginPageBloc.showError.add('Ты в игре! Ожидаем начала');
+                  loginPageBloc.pushButtonState.add(ButtonState('Ожидание', false));
+                  userLogic = PlayerLogic(loginPageBloc, playPageBloc, resultPageBloc, navigatorBloc);
+                  userLogic!.init(login);
+                  socket!.clearListeners();
+                  socket!.on('waiting', (d) => userLogic!.waiting());
+                  socket!.on('question', (d) => userLogic!.question(jsonDecode(jsonEncode(d)), socket!));
+                  socket!.on('admin', (d) => userLogic!.admin(socket!, () {}));
+                  socket!.on('results', (d) => userLogic!.results(jsonDecode(jsonEncode(d))));
+                  socket!.on('finalResults', (d) => userLogic!.finalResults(jsonDecode(jsonEncode(d))));
+                  socket!.on('reset', (d) {
+                    navigatorBloc.setRoute.add('/login');
+                    loginPageBloc.showError.add('Игра перезапущенна, перезагрузи страницу');
+                    loginPageBloc.pushButtonState.add(ButtonState('-', false));
+                  });
+                },
+                (p0) {
+
+                }, () {
+          print('admin');
+
+          localRepository.getId().then((value) {
+            if (value != null) saveSessionId(value!, true, login);
+          });
+
+          userLogic = AdminLogic(loginPageBloc, playPageBloc, resultPageBloc, navigatorBloc);
+          userLogic!.init(login);
+          socket!.clearListeners();
+          userLogic!.admin(socket!, () {});
+          socket!.on('waiting', (d) => userLogic!.waiting());
+          socket!.on('question', (d) => userLogic!.question(jsonDecode(jsonEncode(d)), socket!));
+          socket!.on('admin', (d) => userLogic!.admin(socket!, () {}));
+          socket!.on('results', (d) => userLogic!.results(jsonDecode(jsonEncode(d))));
+          socket!.on('finalResults', (d) => userLogic!.finalResults(jsonDecode(jsonEncode(d))));
+          socket!.on('reset', (d) {});
+            });
+
+      } else {
+        loginPageBloc.showError.add('Введи имя');
       }
     });
 
-
+    loginPageBloc.name.listen((event) => login = event);
     loginPageBloc.pushButtonState.add(ButtonState('Поехали!', true));
   }
 
-  void loginFromSessionId() {
-    socket = restoreConnectionToServer(sessionId!);
-    socket!.on(
-        'session', (data) {
-          loginPageBloc.showError.add('Сервер помнит тебя, ожидай подключения!');
-          loginPageBloc.pushButtonState.add(ButtonState('Ожидание', false));
-          initUser();
-    });
-
-    socket!.onError((data) {
-      localRepository.getName().then((value) {
-        if (value != null) {
-          loginPageBloc.editName.add(value);
-        }
-        localRepository.invalidate();
-        loginFromUsername();
-      });
-    });
-
-    socket!.on(
-        'admin', (data) {
-          print('dsdsd');
-      isAdmin = true;
-      initAdmin();
-    }
-    );
+  Socket loginFromSessionId(String sessionId, Function(Map) onSession, Function(Map) onError, Function() onAdmin) {
+    var s = restoreConnectionToServer(sessionId);
+    s.on('session', (data) => onSession(data));
+    s.onError((data) => onError(data));
+    s.on('admin', (data) => onAdmin());
+    // loginPageBloc.showError.add('Сервер помнит тебя, ожидай подключения!');
+    // loginPageBloc.pushButtonState.add(ButtonState('Ожидание', false));
+    s.connect();
+    return s;
   }
 
-  void loginFromUsername() {
-    socket = connectToServer(login);
-    socket!.on(
-        'session', (data) {
-      sessionId = saveSessionId(jsonEncode(data), isAdmin);
-      loginPageBloc.showError.add('Ты в игре! Ожидаем начала');
-      loginPageBloc.pushButtonState.add(ButtonState('Ожидание', false));
-      initUser();
-    });
-
-    socket!.onError((data) {
-      localRepository.getName().then((value) {
-        if (value != null) {
-          loginPageBloc.editName.add(value);
-        }
-        localRepository.invalidate();
-      });
-    });
-
-    socket!.on(
-      'admin', (data) {
-        print('sdsd');
-        isAdmin = true;
-        initAdmin();
-    }
-    );
-  }
-
-  String? lastQuestion;
-  double pointMuliplier = 1;
-  bool isAnswered = false;
-
-  void initUser() {
-    socket!.on('question', (d) {
-      navigatorBloc.setRoute.add('/play');
-
-      data = jsonDecode(jsonEncode(d));
-      print(jsonEncode(d));
-      print(data);
-
-      lastQuestion = 'Вопрос ${data['question']['question_id']}';
-      playPageBloc.setQuestionId.add(lastQuestion!);
-      playPageBloc.setQuestion.add(data['question']['question_text']);
-
-      if (_timer != null) _timer!.cancel();
-      startTimer((data['timer']-2)*100);
-
-      playPageBloc.setAnswersList.add([
-        AnswerState(data['question']['answers'][0]['text'], ThemeManager().currentTheme.yellow),
-        AnswerState(data['question']['answers'][1]['text'], ThemeManager().currentTheme.blue),
-        AnswerState(data['question']['answers'][2]['text'], ThemeManager().currentTheme.purple),
-        AnswerState(data['question']['answers'][3]['text'], ThemeManager().currentTheme.red)
-      ]);
-
-      playPageBloc.answer.listen((event) {
-
-        if (!isAnswered) {
-          switch (event) {
-            case 0:
-              print('emit1');
-              socket!.emit('answer',
-                  (data['question']['answers'][0]['correct'] == true ? 1 : 0) *
-                      pointMuliplier);
-
-              playPageBloc.setAnswersList.add([
-                AnswerState(data['question']['answers'][0]['text'], ThemeManager().currentTheme.yellow),
-                AnswerState(data['question']['answers'][1]['text'], ThemeManager().currentTheme.blue, false),
-                AnswerState(data['question']['answers'][2]['text'], ThemeManager().currentTheme.purple, false),
-                AnswerState(data['question']['answers'][3]['text'], ThemeManager().currentTheme.red, false)
-              ]);
-
-              break;
-            case 1:
-              print('emit2');
-              socket!.emit('answer',
-                  (data['question']['answers'][1]['correct'] == true ? 1 : 0) *
-                      pointMuliplier);
-
-              playPageBloc.setAnswersList.add([
-                AnswerState(data['question']['answers'][0]['text'], ThemeManager().currentTheme.yellow, false),
-                AnswerState(data['question']['answers'][1]['text'], ThemeManager().currentTheme.blue),
-                AnswerState(data['question']['answers'][2]['text'], ThemeManager().currentTheme.purple, false),
-                AnswerState(data['question']['answers'][3]['text'], ThemeManager().currentTheme.red, false)
-              ]);
-
-              break;
-            case 2:
-              print('emit3');
-              socket!.emit('answer',
-                  (data['question']['answers'][2]['correct'] == true ? 1 : 0) *
-                      pointMuliplier);
-
-              playPageBloc.setAnswersList.add([
-                AnswerState(data['question']['answers'][0]['text'], ThemeManager().currentTheme.yellow, false),
-                AnswerState(data['question']['answers'][1]['text'], ThemeManager().currentTheme.blue, false),
-                AnswerState(data['question']['answers'][2]['text'], ThemeManager().currentTheme.purple),
-                AnswerState(data['question']['answers'][3]['text'], ThemeManager().currentTheme.red, false)
-              ]);
-              break;
-            case 3:
-              print('emit4');
-              socket!.emit('answer',
-                  (data['question']['answers'][3]['correct'] == true ? 1 : 0) *
-                      pointMuliplier);
-
-              playPageBloc.setAnswersList.add([
-                AnswerState(data['question']['answers'][0]['text'], ThemeManager().currentTheme.yellow, false),
-                AnswerState(data['question']['answers'][1]['text'], ThemeManager().currentTheme.blue, false),
-                AnswerState(data['question']['answers'][2]['text'], ThemeManager().currentTheme.purple, false),
-                AnswerState(data['question']['answers'][3]['text'], ThemeManager().currentTheme.red)
-              ]);
-              break;
-          }
-        }
-
-        isAnswered = true;
-      });
-
-
-    });
-
-    socket!.on('results', (d) {
-      if (_timer != null) _timer!.cancel();
-      navigatorBloc.setRoute.add('/result');
-      resultPageBloc.setQuestionId.add(lastQuestion??'Ожидание следующего раунда');
-      pointMuliplier = 1;
-      isAnswered = false;
-
-      Map data = jsonDecode(jsonEncode(d));
-      print(jsonEncode(d));
-      print(data);
-
-      int currentUserId = 0;
-      var users = List.generate(data.length, (index) => UserState(
-          index+1,
-          () { if (data.keys.toList()[index] == login) currentUserId = index; return data.keys.toList()[index];}(),
-          data[data.keys.toList()[index]]['total'],
-          data[data.keys.toList()[index]]['recent'],
-        index == 0? ThemeManager().currentTheme.purple : index == 1? ThemeManager().currentTheme.red : index == 2? ThemeManager().currentTheme.yellow : ThemeManager().currentTheme.white
-      ));
-      resultPageBloc.setUserList.add(users);
-      resultPageBloc.setCurrentUser.add(users[currentUserId]);
-    });
-
-    socket!.on('finalResults', (d) {
-      if (_timer != null) _timer!.cancel();
-      navigatorBloc.setRoute.add('/result');
-      resultPageBloc.setQuestionId.add('Конец игры!');
-      pointMuliplier = 1;
-      isAnswered = false;
-
-      Map data = jsonDecode(jsonEncode(d));
-      print(jsonEncode(d));
-      print(data);
-
-      int currentUserId = 0;
-      var users = List.generate(data.length, (index) => UserState(
-          index+1,
-              () { if (data.keys.toList()[index] == login) currentUserId = index; return data.keys.toList()[index];}(),
-          data[data.keys.toList()[index]]['total'],
-          data[data.keys.toList()[index]]['recent'],
-          index == 0? ThemeManager().currentTheme.purple : index == 1? ThemeManager().currentTheme.red : index == 2? ThemeManager().currentTheme.yellow : ThemeManager().currentTheme.white
-      ));
-      resultPageBloc.setUserList.add(users);
-      resultPageBloc.setCurrentUser.add(users[currentUserId]);
-    });
-
-    socket!.on('reset', (d) {
-      if (_timer != null) _timer!.cancel();
-      localRepository.invalidate();
-      navigatorBloc.setRoute.add('/login');
-      loginPageBloc.showError.add(null);
-      socket!.clearListeners();
-      socket = null;
-
-      login = '';
-      isAdmin = false;
-      sessionId = null;
-      init();
-    });
-  }
-
-  Timer? _timer;
-  void startTimer(double milliseconds) {
-    int t = (milliseconds/100).floor();
-    Timer.periodic(Duration(seconds: 1), (timer) {
-      if (_timer != timer) _timer = timer;
-
-      if (t == 1) {
-        if (!isAnswered) socket!.emit('answer', 0);
-        timer.cancel();
-      }
-
-      pointMuliplier = t/(milliseconds/100).floor();
-      playPageBloc.setTimer.add(t--);
-      timer.tick;
-    });
-  }
-  
-  void initAdmin() {
-    socket!.clearListeners();
-    playPageBloc.setAnswersList.add([
-      AnswerState('Показать следующий вопрос', ThemeManager().currentTheme.white),
-      AnswerState('Остановить время, показать результат', ThemeManager().currentTheme.white),
-      AnswerState('Рестарт сервера', ThemeManager().currentTheme.white),
-      AnswerState('', ThemeManager().currentTheme.white, false)
-    ]);
-
-    playPageBloc.setQuestion.add('Панель администратора');
-    
-    playPageBloc.answer.listen((event) { 
-      switch (event) {
-        case 0:
-          socket!.emit('setState', 'SHOWQUESTION');
-          print(event);
-          break;
-        case 1:
-          socket!.emit('setState', 'SHOWRESULTS');
-          print(event);
-          break;
-        case 2:
-          socket!.emit('setState', 'WAITIGUSERS');
-          print(event);
-          loginFromUsername();
-          break;
-      }
-    });
-
-    navigatorBloc.setRoute.add('/play');
+  Socket loginFromLogin(String login, Function(Map) onSession, Function(Map) onError, Function() onAdmin) {
+    var s = connectToServer(login);
+    s.on('session', (data) => onSession(data));
+    s.onError((data) => onError(data));
+    s.on('admin', (data) => onAdmin());
+    s.connect();
+    return s;
   }
 
   Socket connectToServer(String login) {
-    Socket socket = io('https://quizapi.onixx.org',
+    return io('https://quizapi.onixx.org',
         OptionBuilder()
             .setTransports(['websocket'])
             .disableAutoConnect()
             .setAuth({'username': login})
             .build()
     );
-
-    socket.connect();
-
-    return socket;
   }
 
   Socket restoreConnectionToServer(String sessionId) {
-    Socket socket = io('https://quizapi.onixx.org',
+    return io('https://quizapi.onixx.org',
         OptionBuilder()
             .setTransports(['websocket'])
             .disableAutoConnect()
             .setAuth({'sessionID': sessionId})
             .build()
     );
-
-    socket.connect();
-
-    return socket;
   }
 
-  String saveSessionId(String data, bool isAdmin) {
-    print(data);
-    String sessionId = jsonDecode(data)['sessionID'];
+  void saveSessionId(String sessionId, bool isAdmin, String login) {
+    //jsonDecode(data)['sessionID']
     localRepository.save(sessionId, isAdmin, login);
-    return sessionId;
   }
 
   void dispose() {

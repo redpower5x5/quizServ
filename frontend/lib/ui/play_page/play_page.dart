@@ -25,74 +25,142 @@ class PlayPage extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Stack(
+                  child: Column(
                     children: [
-                      Align(
-                        alignment: Alignment.topCenter,
-                        child: FractionallySizedBox(
-                          heightFactor: 0.4,
-                          child: Center(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                StreamBuilder<String>(
+                      Flexible(
+                        flex: 2,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 20),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              StreamBuilder<String>(
                                   initialData: '...',
                                   stream: playPageBloc.questionId,
                                   builder: (_, s) => Text(s.requireData, style: Theme.of(context).textTheme.headline4,)
+                              ),
+                              SizedBox(height: 20,),
+                              Flexible(
+                                child: StreamBuilder<String>(
+                                  initialData: 'Ожидание...',
+                                  stream: playPageBloc.question,
+                                  builder: (_, s) => TitleText(s.requireData),
                                 ),
-                                SizedBox(height: 20,),
-                                StreamBuilder<String>(
-                                    initialData: 'Ожидание...',
-                                    stream: playPageBloc.question,
-                                    builder: (_, s) => TitleText(s.requireData),
-                                ),
-                                SizedBox(height: 40,),
-                                StreamBuilder<TimerState>(
-                                  initialData: TimerState('--:--', theme.currentTheme.accentColor),
-                                  stream: playPageBloc.timer,
-                                  builder: (_, s) => Text(s.requireData.text, style: Theme.of(context).textTheme.headline5!.copyWith(color: s.requireData.color),),
-                                ),
-                              ],
-                            ),
-                          )
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Consumer<ThemeManager>(
-                          builder: (_, themeManager, __) =>
-                              StreamBuilder<List<AnswerState>>(
-                                initialData: [
-                                  AnswerState('', themeManager.currentTheme.blue, true),
-                                  AnswerState('', themeManager.currentTheme.red, false),
-                                  AnswerState('', themeManager.currentTheme.purple, false),
-                                  AnswerState('', themeManager.currentTheme.yellow, false)
-                                ],
-                                stream: playPageBloc.answersList,
-                                builder: (_, s) =>
-                                    GridView.builder(
-                                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                          crossAxisCount: 2,
-                                          crossAxisSpacing: 18,
-                                          mainAxisSpacing: 18,
-                                          childAspectRatio: 155/155,
-                                        ),
-                                        padding: EdgeInsets.only(bottom: 20),
-                                        shrinkWrap: true,
-                                        itemCount: 4,
-                                        itemBuilder: (_, i) =>
-                                            ChooseButton(
-                                              text: s.requireData[i].text,
-                                              mainColor: s.requireData[i].color,
-                                              isActive: s.requireData[i].isActive,
-                                              onTap: () => playPageBloc.setAnswer.add(i)
-                                            )
-                                    )
-                              )
+                              ),
+                              SizedBox(height: 40,),
+                              StreamBuilder<TimerState>(
+                                initialData: TimerState('--:--', theme.currentTheme.accentColor),
+                                stream: playPageBloc.timer,
+                                builder: (_, s) => Text(s.requireData.text, style: Theme.of(context).textTheme.headline5!.copyWith(color: s.requireData.color),),
+                              ),
+                            ],
+                          ),
                         )
                       ),
+                      Flexible(
+                        flex: 4,
+                        child: Consumer<ThemeManager>(
+                            builder: (_, themeManager, __) =>
+                                StreamBuilder<List<AnswerState>>(
+                                  initialData: [
+                                    AnswerState('', themeManager.currentTheme.blue, true),
+                                    AnswerState('', themeManager.currentTheme.red, false),
+                                    AnswerState('', themeManager.currentTheme.purple, false),
+                                    AnswerState('', themeManager.currentTheme.yellow, false)
+                                  ],
+                                  stream: playPageBloc.answersList,
+                                  builder: (_, s) =>
+                                      GridView.builder(
+                                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                            crossAxisCount: 2,
+                                            crossAxisSpacing: 18,
+                                            mainAxisSpacing: 18,
+                                            childAspectRatio: 155/155,
+                                          ),
+                                          padding: EdgeInsets.only(bottom: 20),
+                                          shrinkWrap: true,
+                                          itemCount: 4,
+                                          itemBuilder: (_, i) =>
+                                              ChooseButton(
+                                                text: s.requireData[i].text,
+                                                mainColor: s.requireData[i].color,
+                                                isActive: s.requireData[i].isActive,
+                                                onTap: () => playPageBloc.setAnswer.add(i)
+                                              )
+                                      )
+                                )
+                          )
+                      )
                     ],
                   ),
+                  // child: Stack(
+                  //   children: [
+                  //     Align(
+                  //       alignment: Alignment.topCenter,
+                  //       child: FractionallySizedBox(
+                  //         heightFactor: 0.4,
+                  //         child: Center(
+                  //           child: Column(
+                  //             mainAxisSize: MainAxisSize.min,
+                  //             children: [
+                  //               StreamBuilder<String>(
+                  //                 initialData: '...',
+                  //                 stream: playPageBloc.questionId,
+                  //                 builder: (_, s) => Text(s.requireData, style: Theme.of(context).textTheme.headline4,)
+                  //               ),
+                  //               SizedBox(height: 20,),
+                  //               StreamBuilder<String>(
+                  //                   initialData: 'Ожидание...',
+                  //                   stream: playPageBloc.question,
+                  //                   builder: (_, s) => TitleText(s.requireData),
+                  //               ),
+                  //               SizedBox(height: 40,),
+                  //               StreamBuilder<TimerState>(
+                  //                 initialData: TimerState('--:--', theme.currentTheme.accentColor),
+                  //                 stream: playPageBloc.timer,
+                  //                 builder: (_, s) => Text(s.requireData.text, style: Theme.of(context).textTheme.headline5!.copyWith(color: s.requireData.color),),
+                  //               ),
+                  //             ],
+                  //           ),
+                  //         )
+                  //       ),
+                  //     ),
+                  //     Align(
+                  //       alignment: Alignment.bottomCenter,
+                  //       child: Consumer<ThemeManager>(
+                  //         builder: (_, themeManager, __) =>
+                  //             StreamBuilder<List<AnswerState>>(
+                  //               initialData: [
+                  //                 AnswerState('', themeManager.currentTheme.blue, true),
+                  //                 AnswerState('', themeManager.currentTheme.red, false),
+                  //                 AnswerState('', themeManager.currentTheme.purple, false),
+                  //                 AnswerState('', themeManager.currentTheme.yellow, false)
+                  //               ],
+                  //               stream: playPageBloc.answersList,
+                  //               builder: (_, s) =>
+                  //                   GridView.builder(
+                  //                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  //                         crossAxisCount: 2,
+                  //                         crossAxisSpacing: 18,
+                  //                         mainAxisSpacing: 18,
+                  //                         childAspectRatio: 155/155,
+                  //                       ),
+                  //                       padding: EdgeInsets.only(bottom: 20),
+                  //                       shrinkWrap: true,
+                  //                       itemCount: 4,
+                  //                       itemBuilder: (_, i) =>
+                  //                           ChooseButton(
+                  //                             text: s.requireData[i].text,
+                  //                             mainColor: s.requireData[i].color,
+                  //                             isActive: s.requireData[i].isActive,
+                  //                             onTap: () => playPageBloc.setAnswer.add(i)
+                  //                           )
+                  //                   )
+                  //             )
+                  //       )
+                  //     ),
+                  //   ],
+                  // ),
                 )
               )
             )
