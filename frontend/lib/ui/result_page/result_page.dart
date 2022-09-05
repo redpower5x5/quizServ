@@ -18,65 +18,80 @@ class ResultPage extends StatelessWidget {
             backgroundColor: theme.currentTheme.backgroundColor,
             body: Center(
                 child: ScrollConfiguration(
-                  behavior: ScrollBehavior(),
+                  behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
                   child: Stack(
                     children: [
                       Align(
-                        alignment: Alignment.center,
+                        alignment: Alignment.topCenter,
                         child: ConstrainedBox(
                             constraints: const BoxConstraints(
                                 maxWidth: 500
                             ),
                             child: Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                                child: Column(
-                                  children: [
-                                    Flexible(
-                                      flex: 2,
-                                      child: Center(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            StreamBuilder<String>(
-                                              initialData: '...',
-                                              stream: resultPageBloc.questionId,
-                                              builder: (_, s) => Text(s.requireData, style: Theme.of(context).textTheme.headline4,),
-                                            ),
-                                            const SizedBox(height: 20,),
-                                            const TitleText('Лидерборд'),
-                                            const SizedBox(height: 40,),
-                                          ],
+                                child: FractionallySizedBox(
+                                  heightFactor: 0.3,
+                                  child: Center(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        StreamBuilder<String>(
+                                          initialData: '...',
+                                          stream: resultPageBloc.questionId,
+                                          builder: (_, s) => Text(s.requireData, style: Theme.of(context).textTheme.headline4, textAlign: TextAlign.center,),
                                         ),
-                                      ),
+                                        const SizedBox(height: 20,),
+                                        const TitleText('Лидерборд'),
+                                        const SizedBox(height: 40,),
+                                      ],
                                     ),
-                                    Flexible(
-                                        flex: 3,
-                                        child: StreamBuilder<List<UserState>>(
-                                            initialData: [],
-                                            stream: resultPageBloc.userList,
-                                            builder: (_, s) => ListView.builder(
-                                                itemCount: s.requireData.length,
-                                                itemBuilder: (__, i) => Padding(
-                                                  padding: const EdgeInsets.only(bottom: 12),
-                                                  child: NameContainer(
-                                                      color: s.requireData[i].color,
-                                                      name: s.requireData[i].name,
-                                                      position: s.requireData[i].id,
-                                                      totalPoints: s.requireData[i].totalPoints,
-                                                      roundPoints: s.requireData[i].roundPoints
-                                                  ),
-                                                )
-                                            )
-                                        )
-                                    ),
-                                    Flexible(
-                                      flex: 1,
-                                      child: SizedBox(),
-                                    )
-                                  ],
+                                  )
                                 )
                             )
                         ),
+                      ),
+                      Align(
+                        alignment: Alignment.topCenter,
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(
+                            maxWidth: 500
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            child: StreamBuilder<List<UserState>>(
+                                initialData: [],
+                                stream: resultPageBloc.userList,
+                                builder: (_, s) => ListView.builder(
+                                    itemCount: s.requireData.length+2,
+                                    itemBuilder: (__, i) {
+
+                                      if (i == 0) {
+                                        return SizedBox(
+                                          height: MediaQuery.of(context).size.height*0.33,
+                                        );
+                                      }
+
+                                      if (i == s.requireData.length+1) {
+                                        return SizedBox(
+                                          height: MediaQuery.of(context).size.height*0.3,
+                                        );
+                                      }
+
+                                      return Padding(
+                                        padding: const EdgeInsets.only(bottom: 12),
+                                        child: NameContainer(
+                                            color: s.requireData[i-1].color,
+                                            name: s.requireData[i-1].name,
+                                            position: s.requireData[i-1].id,
+                                            totalPoints: s.requireData[i-1].totalPoints,
+                                            roundPoints: s.requireData[i-1].roundPoints
+                                        ),
+                                      );
+                                    }
+                                )
+                            ),
+                          )
+                        )
                       ),
                       Align(
                           alignment: Alignment.bottomCenter,

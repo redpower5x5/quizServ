@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:quiz_app/assets/theming/theme_manager.dart';
+import 'package:quiz_app/logic/data/local_repository.dart';
 import 'package:quiz_app/logic/users/user_logic.dart';
 import 'package:quiz_app/models/login_page/login_page_bloc.dart';
 import 'package:quiz_app/models/login_page/login_page_button_state.dart';
@@ -23,6 +24,7 @@ class PlayerLogic implements UserLogic {
   late String name;
 
   String? lastQuestion;
+  String? totalQuestions;
 
   @override
   void init(String name) {
@@ -43,13 +45,13 @@ class PlayerLogic implements UserLogic {
   @override
   void question(Map data, Socket socket) {
     if (timer != null) timer!.cancel();
-    isAnswered = true;
 
     double pointMultiplier = 1;
 
     lastQuestion = data['question']['question_id'].toString();
+    totalQuestions = data['totalQuestions'].toString();
     navigatorBloc.setRoute.add('/play');
-    playPageBloc.setQuestionId.add('Вопрос $lastQuestion');
+    playPageBloc.setQuestionId.add('Вопрос $lastQuestion из $totalQuestions');
     playPageBloc.setQuestion.add(data['question']['question_text']);
 
     List colors = getColors();
@@ -61,7 +63,7 @@ class PlayerLogic implements UserLogic {
       AnswerState(data['question']['answers'][3]['text'], colors[3])
     ]);
 
-    timer = startTimer((data['timer']-3)*100,
+    timer = startTimer((data['timer']-2)*100,
             () {if (!isAnswered)  socket.emit('answer', 0);},
             (t, milliseconds) {
               pointMultiplier = t/(milliseconds/100).floor();
@@ -70,54 +72,122 @@ class PlayerLogic implements UserLogic {
     );
 
     if (answerListSubscription != null) answerListSubscription!.cancel();
-    answerListSubscription = playPageBloc.answer.listen((event) {
-      
-      socket.emit('answer',
-          (data['question']['answers'][event]['correct'] == true ? 1 : 0) * pointMultiplier);
-      print(data['question']['answers'][event]['correct']);
-      isAnswered = true;
 
-      switch (event) {
-        case 0:
-          playPageBloc.setAnswersList.add([
-            AnswerState(data['question']['answers'][0]['text'], colors[0]),
-            AnswerState(data['question']['answers'][1]['text'], colors[1], false),
-            AnswerState(data['question']['answers'][2]['text'], colors[2], false),
-            AnswerState(data['question']['answers'][3]['text'], colors[3], false)
-          ]);
-          break;
-        case 1:
-          playPageBloc.setAnswersList.add([
-            AnswerState(data['question']['answers'][0]['text'], colors[0], false),
-            AnswerState(data['question']['answers'][1]['text'], colors[1]),
-            AnswerState(data['question']['answers'][2]['text'], colors[2], false),
-            AnswerState(data['question']['answers'][3]['text'], colors[3], false)
-          ]);
-          break;
-        case 2:
-          playPageBloc.setAnswersList.add([
-            AnswerState(data['question']['answers'][0]['text'], colors[0], false),
-            AnswerState(data['question']['answers'][1]['text'], colors[1], false),
-            AnswerState(data['question']['answers'][2]['text'], colors[2]),
-            AnswerState(data['question']['answers'][3]['text'], colors[3], false)
-          ]);
-          break;
-        case 3:
-          playPageBloc.setAnswersList.add([
-            AnswerState(data['question']['answers'][0]['text'], colors[0], false),
-            AnswerState(data['question']['answers'][1]['text'], colors[1], false),
-            AnswerState(data['question']['answers'][2]['text'], colors[2], false),
-            AnswerState(data['question']['answers'][3]['text'], colors[3])
-          ]);
-          break;
-      }
-    });
+    if (!data['isAnswered']) {
+      answerListSubscription = playPageBloc.answer.listen((event) {
+        socket.emit('answer',
+            (data['question']['answers'][event]['correct'] == true ? 1 : 0) *
+                pointMultiplier);
+        print(data['question']['answers'][event]['correct']);
+        isAnswered = true;
+        LocalRepository().saveAnswer(event);
+
+        switch (event) {
+          case 0:
+            playPageBloc.setAnswersList.add([
+              AnswerState(data['question']['answers'][0]['text'], colors[0]),
+              AnswerState(
+                  data['question']['answers'][1]['text'], colors[1], false),
+              AnswerState(
+                  data['question']['answers'][2]['text'], colors[2], false),
+              AnswerState(
+                  data['question']['answers'][3]['text'], colors[3], false)
+            ]);
+            break;
+          case 1:
+            playPageBloc.setAnswersList.add([
+              AnswerState(
+                  data['question']['answers'][0]['text'], colors[0], false),
+              AnswerState(data['question']['answers'][1]['text'], colors[1]),
+              AnswerState(
+                  data['question']['answers'][2]['text'], colors[2], false),
+              AnswerState(
+                  data['question']['answers'][3]['text'], colors[3], false)
+            ]);
+            break;
+          case 2:
+            playPageBloc.setAnswersList.add([
+              AnswerState(
+                  data['question']['answers'][0]['text'], colors[0], false),
+              AnswerState(
+                  data['question']['answers'][1]['text'], colors[1], false),
+              AnswerState(data['question']['answers'][2]['text'], colors[2]),
+              AnswerState(
+                  data['question']['answers'][3]['text'], colors[3], false)
+            ]);
+            break;
+          case 3:
+            playPageBloc.setAnswersList.add([
+              AnswerState(
+                  data['question']['answers'][0]['text'], colors[0], false),
+              AnswerState(
+                  data['question']['answers'][1]['text'], colors[1], false),
+              AnswerState(
+                  data['question']['answers'][2]['text'], colors[2], false),
+              AnswerState(data['question']['answers'][3]['text'], colors[3])
+            ]);
+            break;
+        }
+        answerListSubscription!.cancel();
+      });
+    } else {
+      LocalRepository().getAnswer().then((event) {
+        isAnswered = true;
+        switch (event) {
+          case 0:
+            playPageBloc.setAnswersList.add([
+              AnswerState(data['question']['answers'][0]['text'], colors[0]),
+              AnswerState(
+                  data['question']['answers'][1]['text'], colors[1], false),
+              AnswerState(
+                  data['question']['answers'][2]['text'], colors[2], false),
+              AnswerState(
+                  data['question']['answers'][3]['text'], colors[3], false)
+            ]);
+            break;
+          case 1:
+            playPageBloc.setAnswersList.add([
+              AnswerState(
+                  data['question']['answers'][0]['text'], colors[0], false),
+              AnswerState(data['question']['answers'][1]['text'], colors[1]),
+              AnswerState(
+                  data['question']['answers'][2]['text'], colors[2], false),
+              AnswerState(
+                  data['question']['answers'][3]['text'], colors[3], false)
+            ]);
+            break;
+          case 2:
+            playPageBloc.setAnswersList.add([
+              AnswerState(
+                  data['question']['answers'][0]['text'], colors[0], false),
+              AnswerState(
+                  data['question']['answers'][1]['text'], colors[1], false),
+              AnswerState(data['question']['answers'][2]['text'], colors[2]),
+              AnswerState(
+                  data['question']['answers'][3]['text'], colors[3], false)
+            ]);
+            break;
+          case 3:
+            playPageBloc.setAnswersList.add([
+              AnswerState(
+                  data['question']['answers'][0]['text'], colors[0], false),
+              AnswerState(
+                  data['question']['answers'][1]['text'], colors[1], false),
+              AnswerState(
+                  data['question']['answers'][2]['text'], colors[2], false),
+              AnswerState(data['question']['answers'][3]['text'], colors[3])
+            ]);
+            break;
+        }
+        answerListSubscription!.cancel();
+      });
+    }
   }
 
   @override
   void results(Map data) {
     navigatorBloc.setRoute.add('/result');
-    resultPageBloc.setQuestionId.add(lastQuestion ?? 'Ожидание следующего раунда');
+    resultPageBloc.setQuestionId.add(lastQuestion != null? 'Вопрос $lastQuestion из $totalQuestions' : 'Ожидание следующего раунда');
 
     int currentUserId = -1;
 
@@ -170,7 +240,7 @@ class PlayerLogic implements UserLogic {
   Timer startTimer(double milliseconds, Function onEnds, Function(int, double) onTick) {
     int t = (milliseconds/100).floor();
     return Timer.periodic(Duration(seconds: 1), (timer) {
-      if (t == 1) {
+      if (t == 0) {
         onEnds();
         timer.cancel();
       }

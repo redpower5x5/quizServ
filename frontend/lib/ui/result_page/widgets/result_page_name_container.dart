@@ -72,7 +72,7 @@ class _NameContainerState extends State<NameContainer> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Flexible(
-                              child: AutoSizeText('+${widget.roundPoints.toStringAsPrecision(2)}', style: Theme.of(context).textTheme.subtitle2, maxLines: 1,),
+                              child: AutoSizeText('+${widget.roundPoints.toStringAsFixed(2)}', style: Theme.of(context).textTheme.subtitle2, maxLines: 1,),
                             ),
                             const SizedBox(width: 15,),
                             Flexible(
@@ -97,7 +97,7 @@ class _NameContainerState extends State<NameContainer> {
                                         ),
                                         height: widget.heightSubbar - widget.bottomSubbar-2,
                                         child: Center(
-                                          child: AutoSizeText(widget.totalPoints.toStringAsPrecision(2), style: Theme.of(context).textTheme.subtitle2, maxLines: 1,),
+                                          child: AutoSizeText(widget.totalPoints.toStringAsFixed(2), style: Theme.of(context).textTheme.subtitle2, maxLines: 1,),
                                         )
                                     ),
                                   )

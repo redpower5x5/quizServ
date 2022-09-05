@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class NavigatorBLocProvider extends StatefulWidget {
@@ -14,9 +16,17 @@ class NavigatorBLocProvider extends StatefulWidget {
 
 class _NavigatorBLocProviderState extends State<NavigatorBLocProvider> {
 
+  late StreamSubscription subscription;
   @override
   void initState() {
-    widget.navigatorStream.listen((event) { if (widget.routeName != event) Navigator.of(widget.buildContext).pushReplacementNamed(event);});
+    subscription = widget.navigatorStream.listen((event) { if (widget.routeName != event) Navigator.of(widget.buildContext, rootNavigator: true).pushReplacementNamed(event);});
+  }
+
+
+  @override
+  void deactivate() {
+    super.deactivate();
+    subscription.cancel();
   }
 
   @override

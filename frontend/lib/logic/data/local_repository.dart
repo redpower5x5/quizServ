@@ -11,13 +11,19 @@ class LocalRepository {
     _localStorage['name'] = name;
   }
 
+  Future saveAnswer(int answer) async {
+    _localStorage['answer'] = answer.toString();
+  }
+
   Future<String?> getId() async => _localStorage['sessionId'];
   Future<String?> getName() async => _localStorage['name'];
   Future<bool?> getIsAdmin() async => _localStorage['isAdmin'] == 'true'? true : false;
+  Future<int> getAnswer() async => int.parse(_localStorage['answer']??'0');
 
   Future invalidate() async {
     _localStorage.remove('sessionId');
     _localStorage.remove('isAdmin');
     _localStorage.remove('name');
+    _localStorage.remove('answer');
   }
 }

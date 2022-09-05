@@ -50,6 +50,7 @@ class GameLogic {
                   socket!.on('results', (d) => userLogic!.results(jsonDecode(jsonEncode(d))));
                   socket!.on('finalResults', (d) => userLogic!.finalResults(jsonDecode(jsonEncode(d))));
                   socket!.on('reset', (d) {
+                    localRepository.invalidate();
                     navigatorBloc.setRoute.add('/login');
                     loginPageBloc.showError.add('Игра перезапущенна, перезагрузи страницу');
                     loginPageBloc.pushButtonState.add(ButtonState('-', false));
@@ -73,6 +74,7 @@ class GameLogic {
           socket!.on('results', (d) => userLogic!.results(jsonDecode(jsonEncode(d))));
           socket!.on('finalResults', (d) => userLogic!.finalResults(jsonDecode(jsonEncode(d))));
           socket!.on('reset', (d) {
+            localRepository.invalidate();
             navigatorBloc.setRoute.add('/login');
             loginPageBloc.showError.add('Игра перезапущенна, перезагрузи страницу');
             loginPageBloc.pushButtonState.add(ButtonState('-', false));
@@ -110,7 +112,7 @@ class GameLogic {
           print('admin');
 
           localRepository.getId().then((value) {
-            if (value != null) saveSessionId(value!, true, login);
+            if (value != null) saveSessionId(value, true, login);
           });
 
           userLogic = AdminLogic(loginPageBloc, playPageBloc, resultPageBloc, navigatorBloc);
@@ -137,7 +139,7 @@ class GameLogic {
   Socket loginFromSessionId(String sessionId, Function(Map) onSession, Function(Map) onError, Function() onAdmin) {
     var s = restoreConnectionToServer(sessionId);
     s.on('session', (data) => onSession(data));
-    s.onError((data) => onError(data));
+    s.on('message', (data) => onError(data));
     s.on('admin', (data) => onAdmin());
     // loginPageBloc.showError.add('Сервер помнит тебя, ожидай подключения!');
     // loginPageBloc.pushButtonState.add(ButtonState('Ожидание', false));
@@ -148,7 +150,7 @@ class GameLogic {
   Socket loginFromLogin(String login, Function(Map) onSession, Function(Map) onError, Function() onAdmin) {
     var s = connectToServer(login);
     s.on('session', (data) => onSession(data));
-    s.onError((data) => onError(data));
+    s.on('message', (data) => onError(data));
     s.on('admin', (data) => onAdmin());
     s.connect();
     return s;

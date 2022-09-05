@@ -56,6 +56,7 @@ class _ChooseButtonState extends State<ChooseButton> {
                 widget.text,
                 style: Theme.of(context).textTheme.headline6,
                 textAlign: TextAlign.center,
+                wrapWords: false,
               ),
             )
         ),
