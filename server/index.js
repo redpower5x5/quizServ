@@ -136,8 +136,12 @@ io.on("connection", (socket) => {
   
   // receive answer
   socket.on("answer", (score) => {
+    if (answersStore.checkRecentScores(socket.username)) {
+      console.log("already answered");
+    } else {
     console.log(`${socket.username} answered ${score}`);
     answersStore.saveAnswer({ userID: socket.username, score: score });
+    }
   });
 
   // receive setState message
