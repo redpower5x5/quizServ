@@ -14,7 +14,7 @@
 class InMemoryAnswersStore extends AnswersStore {
     constructor() {
         super();
-        this.maxQuestions = 4;
+        this.maxQuestions = 12;
         this.recentScores = new Map();
         this.totalScores = new Map();
         this.quizData = require("./quizData.json");

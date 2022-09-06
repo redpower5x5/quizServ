@@ -2,102 +2,302 @@
     "questions": [
       {
         "question_id": 1,
-        "question_text": "Какого языка программирования НЕ существует?",
+        "question_text": "Сколько первокурсников поступило в ИКН в 2022 году?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "LOLCODE",
+            "text" : "600+",
             "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "BruhLang",
-            "correct" : true
-          },
-          {
-            "answer_id": 3,
-            "text" : "Chicken",
+            "text" : "800+",
             "correct" : false
           },
           {
+            "answer_id": 3,
+            "text" : "900+",
+            "correct" : true
+          },
+          {
             "answer_id": 4,
-            "text" : "Brainfuck",
+            "text" : "700+",
             "correct" : false
           }
         ]
       },
       {
         "question_id": 2,
-        "question_text": "мы создали этот квиз за...",
+        "question_text": "Сколько же кафедр в институте компьютерных наук?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "три дня",
-            "correct" : true
-          },
-          {
-            "answer_id": 2,
-            "text" : "две недели",
+            "text" : "5",
             "correct" : false
           },
           {
+            "answer_id": 2,
+            "text" : "6",
+            "correct" : true
+          },
+          {
             "answer_id": 3,
-            "text" : "один месяц",
+            "text" : "7",
             "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "год",
+            "text" : "4",
             "correct" : false
           }
         ]
       },{
         "question_id": 3,
-        "question_text": "сколько столов в библиотеке?",
+        "question_text": "Какое название команды хакатонщиков из МИСиС существовало?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "10",
-            "correct" : false
+            "text" : "Боком на КИКе",
+            "correct" : true
           },
           {
             "answer_id": 2,
-            "text" : "31",
+            "text" : "АйТишники из МИСИС",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "45",
-            "correct" : false
+            "text" : "Samurai kittens from MISIS",
+            "correct" : true
           },
           {
             "answer_id": 4,
-            "text" : "не знаю",
-            "correct" : true
+            "text" : "ML_MISIS_SQUAD",
+            "correct" : false
           }
         ]
       },{
         "question_id": 4,
-        "question_text": "В какой программе запущена презентация?",
+        "question_text": "Какого направления НЕ существует в дизайне?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "телевизор",
+            "text" : "Промышленного",
             "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "поверпоинт",
+            "text" : "Коммуникационного",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "фигма",
+            "text" : "Идеального",
             "correct" : true
           },
           {
             "answer_id": 4,
-            "text" : "либре офис",
+            "text" : "Продуктового",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 5,
+        "question_text": "Что будет, если набрать в «Ну, погоди» набрать 1000 очков?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "Секретная серия мультика",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Приставка загорится",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Ничего",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Игра станет сложнее",
+            "correct" : true
+          }
+        ]
+      },{
+        "question_id": 6,
+        "question_text": "Кто разработал робота Atlas?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "Boston Dynamics",
+            "correct" : true
+          },
+          {
+            "answer_id": 2,
+            "text" : "AGV Robotics",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Universal Robotics",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Promobot",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 7,
+        "question_text": "Правильные треугольная и четырёхугольная пирамиды, все ребра которых равны 1, склеены по треугольной грани. Сколько граней у получившегося многогранника?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "5",
+            "correct" : true
+          },
+          {
+            "answer_id": 2,
+            "text" : "6",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "7",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "8",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 8,
+        "question_text": "В каком году в России киберспорт признали официальным видом спорта, включив его во Всероссийский реестр видов спорта (ВРВС)?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "2001",
+            "correct" : true
+          },
+          {
+            "answer_id": 2,
+            "text" : "2005",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "2007",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "2022",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 9,
+        "question_text": "«Под крылом самолёта о чём-то поет зеленое море тайги…». Кто автор этих строк:",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "Добролюбов",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Добронравов",
+            "correct" : true
+          },
+          {
+            "answer_id": 3,
+            "text" : "Мягков",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Боголюбов",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 10,
+        "question_text": "Кто является председателем Студенческого совета Университета МИСИС?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "Сафаров Зафар",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Панкова Варвара",
+            "correct" : true
+          },
+          {
+            "answer_id": 3,
+            "text" : "Чернявский Александр",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Ходасевич Алина",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 11,
+        "question_text": "Как вы думаете, сколько лет ППО обучающихся МИСИС?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "Зелёные ещё, 12 годиков",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Мы тоже первокурсники, нам 18 лет!",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Давно не дети, нам уже 27",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Старички, уже ипотека погашена, нам 35",
+            "correct" : true
+          }
+        ]
+      },{
+        "question_id": 12,
+        "question_text": "Как вы себя сейчас чувствуете?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "Заряжен побеждать и отлично учиться 😎",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Радуюсь тому, что поступил в ИКН 🥳",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Осталось очень много вопросов 🧐",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Чувствую себя уставшим 🥱",
             "correct" : false
           }
         ]
