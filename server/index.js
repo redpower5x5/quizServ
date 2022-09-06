@@ -19,12 +19,13 @@ const states = {
   RESULTS: "SHOWRESULTS",
   WAITIGUSERS: "WAITIGUSERS",
   FINAL: "FINAL",
+  TAPLINK: "TAPLINK",
 };
 let currentState = states.WAITIGUSERS;
 
 let qurrentQuestionId = 1;
 
-const initialTimer = 22.0;
+const initialTimer = 42.0;
 
 let timer = initialTimer;
 
@@ -101,6 +102,8 @@ io.on("connection", (socket) => {
     socket.emit("waiting");
   } else if (currentState === states.FINAL) {
     socket.emit("finalResults", sortedScores);
+  } else if (currentState === states.TAPLINK) {
+    socket.emit("tapLink");
   }
 
 
@@ -141,6 +144,14 @@ io.on("connection", (socket) => {
     } else {
     console.log(`${socket.username} answered ${score}`);
     answersStore.saveAnswer({ userID: socket.username, score: score });
+    }
+  });
+
+  socket.on("emotion", (questionId) => {
+    if (answersStore.checkStats(socket.username)) {
+      console.log("already answered");
+    } else{
+      answersStore.saveStats({ userID: socket.username, questionId: questionId });
     }
   });
 
@@ -192,6 +203,7 @@ io.on("connection", (socket) => {
             currentState = states.FINAL;
             // broadcast final results
             socket.broadcast.emit("finalResults", sortedScores);
+            console.log(answersStore.getStats());
           } else {
             // broadcast results
             socket.broadcast.emit("results", sortedScores);
@@ -221,6 +233,7 @@ io.on("connection", (socket) => {
         currentState = states.FINAL;
         // broadcast final results
         socket.broadcast.emit("finalResults", sortedScores);
+        console.log(answersStore.getStats());
       } else {
         // broadcast results
         socket.broadcast.emit("results", sortedScores);
@@ -248,6 +261,9 @@ io.on("connection", (socket) => {
       socket.broadcast.emit("reset");
       currentState = states.WAITIGUSERS;
       console.log(`current state: ${currentState}`);
+    } else if (state === states.TAPLINK) {
+      socket.broadcast.emit(states.TAPLINK, "tapLink");
+      currentState = states.TAPLINK;
     }
   });
 
