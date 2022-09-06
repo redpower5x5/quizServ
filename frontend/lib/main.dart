@@ -11,6 +11,7 @@ import 'package:quiz_app/ui/result_page/result_page.dart';
 import 'ui/login_page/login_page.dart';
 
 void main() {
+  print('Quolly v 0.9.5');
   runApp(MyApp());
 }
 
