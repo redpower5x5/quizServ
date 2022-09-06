@@ -57,11 +57,12 @@ class GameLogic {
                   });
             },
                 (p0) {
+                  print('clear cache');
                   localRepository.invalidate();
                   loginPageBloc.showError.add(null);
+                  loginPageBloc.pushButtonState.add(ButtonState('Поехали', true));
                   socket!.close();
                   socket = null;
-                  loginPageBloc.pushButtonState.add(ButtonState('Поехали', true));
             }, () {
               print('admin');
           userLogic = AdminLogic(loginPageBloc, playPageBloc, resultPageBloc, navigatorBloc);
@@ -139,7 +140,7 @@ class GameLogic {
   Socket loginFromSessionId(String sessionId, Function(Map) onSession, Function(Map) onError, Function() onAdmin) {
     var s = restoreConnectionToServer(sessionId);
     s.on('session', (data) => onSession(data));
-    s.on('message', (data) => onError(data));
+    s.onError((data) => onError(data));
     s.on('admin', (data) => onAdmin());
     // loginPageBloc.showError.add('Сервер помнит тебя, ожидай подключения!');
     // loginPageBloc.pushButtonState.add(ButtonState('Ожидание', false));
@@ -150,7 +151,7 @@ class GameLogic {
   Socket loginFromLogin(String login, Function(Map) onSession, Function(Map) onError, Function() onAdmin) {
     var s = connectToServer(login);
     s.on('session', (data) => onSession(data));
-    s.on('message', (data) => onError(data));
+    s.onError((data) => onError(data));
     s.on('admin', (data) => onAdmin());
     s.connect();
     return s;
