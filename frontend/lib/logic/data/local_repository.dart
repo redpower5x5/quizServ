@@ -25,5 +25,6 @@ class LocalRepository {
     _localStorage.remove('isAdmin');
     _localStorage.remove('name');
     _localStorage.remove('answer');
+    print('invalidated');
   }
 }
