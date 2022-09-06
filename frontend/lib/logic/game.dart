@@ -50,18 +50,20 @@ class GameLogic {
                   socket!.on('results', (d) => userLogic!.results(jsonDecode(jsonEncode(d))));
                   socket!.on('finalResults', (d) => userLogic!.finalResults(jsonDecode(jsonEncode(d))));
                   socket!.on('reset', (d) {
-                    localRepository.invalidate();
-                    navigatorBloc.setRoute.add('/login');
-                    loginPageBloc.showError.add('Игра перезапущенна, перезагрузи страницу');
-                    loginPageBloc.pushButtonState.add(ButtonState('-', false));
+                    localRepository.invalidate().then((value) {
+                      navigatorBloc.setRoute.add('/login');
+                      loginPageBloc.showError.add('Игра перезапущенна, перезагрузи страницу');
+                      loginPageBloc.pushButtonState.add(ButtonState('-', false));
+                    });
                   });
             },
                 (p0) {
+                  print('clear cache');
                   localRepository.invalidate();
                   loginPageBloc.showError.add(null);
+                  loginPageBloc.pushButtonState.add(ButtonState('Поехали', true));
                   socket!.close();
                   socket = null;
-                  loginPageBloc.pushButtonState.add(ButtonState('Поехали', true));
             }, () {
               print('admin');
           userLogic = AdminLogic(loginPageBloc, playPageBloc, resultPageBloc, navigatorBloc);
@@ -73,12 +75,7 @@ class GameLogic {
           socket!.on('admin', (d) => userLogic!.admin(socket!, () {}));
           socket!.on('results', (d) => userLogic!.results(jsonDecode(jsonEncode(d))));
           socket!.on('finalResults', (d) => userLogic!.finalResults(jsonDecode(jsonEncode(d))));
-          socket!.on('reset', (d) {
-            localRepository.invalidate();
-            navigatorBloc.setRoute.add('/login');
-            loginPageBloc.showError.add('Игра перезапущенна, перезагрузи страницу');
-            loginPageBloc.pushButtonState.add(ButtonState('-', false));
-          });
+          socket!.on('reset', (d) {});
             });
       }
     });
@@ -101,9 +98,11 @@ class GameLogic {
                   socket!.on('results', (d) => userLogic!.results(jsonDecode(jsonEncode(d))));
                   socket!.on('finalResults', (d) => userLogic!.finalResults(jsonDecode(jsonEncode(d))));
                   socket!.on('reset', (d) {
-                    navigatorBloc.setRoute.add('/login');
-                    loginPageBloc.showError.add('Игра перезапущенна, перезагрузи страницу');
-                    loginPageBloc.pushButtonState.add(ButtonState('-', false));
+                    localRepository.invalidate().then((value) {
+                      navigatorBloc.setRoute.add('/login');
+                      loginPageBloc.showError.add('Игра перезапущенна, перезагрузи страницу');
+                      loginPageBloc.pushButtonState.add(ButtonState('-', false));
+                    });
                   });
                 },
                 (p0) {
