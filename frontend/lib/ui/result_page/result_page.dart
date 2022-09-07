@@ -57,7 +57,7 @@ class ResultPage extends StatelessWidget {
                             maxWidth: 500
                           ),
                           child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: StreamBuilder<List<UserState>>(
                                 initialData: [],
                                 stream: resultPageBloc.userList,
@@ -77,6 +77,8 @@ class ResultPage extends StatelessWidget {
                                         );
                                       }
 
+                                      if (s.requireData[i-1].name.split(' ')[0] == 'lAqSCG4rIV') return SizedBox();
+
                                       return Padding(
                                         padding: const EdgeInsets.only(bottom: 12),
                                         child: NameContainer(
@@ -95,34 +97,37 @@ class ResultPage extends StatelessWidget {
                       ),
                       Align(
                           alignment: Alignment.bottomCenter,
-                          child: FractionallySizedBox(
-                            heightFactor: 0.3,
-                            widthFactor: 1.0,
-                            child: Container(
-                                decoration: const BoxDecoration(
-                                    gradient: LinearGradient(
-                                        begin: Alignment.bottomCenter,
-                                        end: Alignment.topCenter,
-                                        colors: [Colors.black, Colors.transparent]
+                          child: StreamBuilder<UserState> (
+                            initialData: UserState(0, '-', 0,0, theme.currentTheme.grey),
+                            stream: resultPageBloc.currentUser,
+                            builder: (_, s) {
+                              if (s.requireData.name.split(' ')[0] == 'lAqSCG4rIV' || s.requireData.name.split(' ')[0] == '-') return const SizedBox();
+                              return FractionallySizedBox(
+                                heightFactor: 0.3,
+                                widthFactor: 1.0,
+                                child: Container(
+                                    decoration: const BoxDecoration(
+                                        gradient: LinearGradient(
+                                            begin: Alignment.bottomCenter,
+                                            end: Alignment.topCenter,
+                                            colors: [Colors.black, Colors.transparent]
+                                        )
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(bottom: 40, left: 20, right: 20),
+                                      child: Align(
+                                          alignment: Alignment.bottomCenter,
+                                          child: ConstrainedBox(
+                                            constraints: const BoxConstraints(
+                                                maxWidth: 500
+                                            ),
+                                            child: NameContainer(color: s.requireData!.color, name: s.requireData!.name, position: s.requireData!.id, totalPoints: s.requireData!.totalPoints, roundPoints: s.requireData!.roundPoints),
+                                          )
+                                      ),
                                     )
                                 ),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(bottom: 40, left: 20, right: 20),
-                                  child: Align(
-                                      alignment: Alignment.bottomCenter,
-                                      child: ConstrainedBox(
-                                          constraints: const BoxConstraints(
-                                              maxWidth: 500
-                                          ),
-                                          child: StreamBuilder<UserState>(
-                                            initialData: UserState(0, 'Ожидание...', 0, 0, theme.currentTheme.white),
-                                            stream: resultPageBloc.currentUser,
-                                            builder: (_, s) => NameContainer(color: s.requireData.color, name: s.requireData.name, position: s.requireData.id, totalPoints: s.requireData.totalPoints, roundPoints: s.requireData.roundPoints),
-                                          )
-                                      )
-                                  ),
-                                )
-                            ),
+                              );
+                            }
                           )
                       )
                     ],

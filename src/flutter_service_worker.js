@@ -12,7 +12,7 @@ const RESOURCES = {
 "android-chrome-192x192.png": "3dc3a85f13bed2a7ec793684e3c5ec52",
 "apple-touch-icon.png": "bbfc7d2341ab212b67221a3bd633b698",
 "android-chrome-256x256.png": "95fe8776147c2062e704e426c02d37fe",
-"main.dart.js": "034977ff335ecc5fbe3ccff645ffaeb3",
+"main.dart.js": "ae03afa2040c0df5b9731902b617ae05",
 "flutter.js": "0816e65a103ba8ba51b174eeeeb2cb67",
 "site.webmanifest": "44fe19b82676cc49550804ef880e2e3e",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
