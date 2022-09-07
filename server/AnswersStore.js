@@ -2,20 +2,23 @@
     getMaxQuestionId() {}
     getQuestion(id) {}
     saveAnswer(answer) {}
+    saveStats(stats) {}
     resetRecentScores() {}
     resetGame() {}
     sortScores() {}
     getScores() {}
     checkRecentScores(userID) {}
+    checkStats(userID) {}
   }
 
 class InMemoryAnswersStore extends AnswersStore {
     constructor() {
         super();
-        this.maxQuestions = 4;
+        this.maxQuestions = 12;
         this.recentScores = new Map();
         this.totalScores = new Map();
         this.quizData = require("./quizData.json");
+        this.lastStats = new Map();
     }
 
     getMaxQuestionId() {
@@ -28,6 +31,18 @@ class InMemoryAnswersStore extends AnswersStore {
 
     checkRecentScores(userID) {
         return this.recentScores.has(userID);
+    }
+
+    saveStats(stats) {
+        this.lastStats.set(stats.userID, stats);
+    }
+
+    checkStats(userID) {
+        return this.lastStats.has(userID);
+    }
+
+    getStats() {
+        return Object.fromEntries(this.lastStats);
     }
 
     saveAnswer(answer) {
