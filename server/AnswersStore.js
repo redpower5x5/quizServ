@@ -19,6 +19,7 @@ class InMemoryAnswersStore extends AnswersStore {
         this.totalScores = new Map();
         this.quizData = require("./quizData.json");
         this.lastStats = new Map();
+        this.currentQuestionId = 1;
     }
 
     getMaxQuestionId() {

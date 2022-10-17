@@ -20,6 +20,7 @@ const states = {
   WAITIGUSERS: "WAITIGUSERS",
   FINAL: "FINAL",
   TAPLINK: "TAPLINK",
+  NEWSTATE: "NEWSTATE"
 };
 let currentState = states.WAITIGUSERS;
 
@@ -33,7 +34,13 @@ let sortedScores = null;
 
 var countDown = null;
 
+var new_has = null;
+
+
 const adminToken = "8w6VBYgcY9cGcH8Q";
+
+//todo: add admin middleware
+//todo: add http server adapter for socket.io auth and token gen
 
 
 io.use((socket, next) => {
@@ -104,6 +111,11 @@ io.on("connection", (socket) => {
     socket.emit("finalResults", sortedScores);
   } else if (currentState === states.TAPLINK) {
     socket.emit("tapLink");
+  } else if (currentState === states.NEWSTATE) {
+    if (new_has === null) {
+      new_has = answersStore.getScores();
+    }
+    socket.emit("answers", new_has);
   }
 
 
