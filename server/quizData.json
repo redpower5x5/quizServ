@@ -128,7 +128,7 @@
         ]
       },{
         "question_id": 6,
-        "question_text": "В начале 20х веков здесь было производство чего-то. Произвол чего? ",
+        "question_text": "В начале 20-го века здесь (на заводе 'Кристалл') было производство чего-то. Произвол чего? ",
         "answers": [ 
           {
             "answer_id": 1,
@@ -278,6 +278,31 @@
         ]
       },{
         "question_id": 12,
+        "question_text": "Кто победил на Кубке в 2022 году?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "ЭУПП",
+            "correct" : true
+          },
+          {
+            "answer_id": 2,
+            "text" : "Горный",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "ИТКН",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "ИБО",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 13,
         "question_text": "Самый лучший университет Мира?",
         "answers": [ 
           {
