@@ -5,10 +5,9 @@ import 'package:quiz_app/assets/material_color_generator/material_color_generato
 import 'package:quiz_app/assets/theming/theme_manager.dart';
 import 'package:quiz_app/logic/game.dart';
 import 'package:quiz_app/models/navigator/navigator_bloc_provider.dart';
-import 'package:quiz_app/ui/play_page/play_page.dart';
-import 'package:quiz_app/ui/result_page/result_page.dart';
-
-import 'ui/login_page/login_page.dart';
+import 'package:quiz_app/ui/login_page/login_page_deffered.dart';
+import 'package:quiz_app/ui/play_page/play_page_deffered.dart';
+import 'package:quiz_app/ui/result_page/result_page_deffered.dart';
 
 void main() {
   print('Quolly v 0.9.6');
@@ -94,19 +93,19 @@ class _MyAppState extends State<MyApp> {
                 routeName: '/login',
                 buildContext: c,
                 navigatorStream: gameLogic.navigatorBloc.navigator,
-                child: LoginPage(gameLogic.loginPageBloc)
+                child: LoginPageDeffered(loginPageBloc: gameLogic.loginPageBloc)
             ),
             '/play': (c) => NavigatorBLocProvider(
                 routeName: '/play',
                 buildContext: c,
                 navigatorStream: gameLogic.navigatorBloc.navigator,
-                child: PlayPage(gameLogic.playPageBloc)
+                child: PlayPageDeffered(playPageBloc: gameLogic.playPageBloc)
             ),
             '/result': (c) => NavigatorBLocProvider(
                 routeName: '/result',
                 buildContext: c,
                 navigatorStream: gameLogic.navigatorBloc.navigator,
-                child: ResultPage(gameLogic.resultPageBloc)
+                child: ResultPageDeffered(resultPageBloc: gameLogic.resultPageBloc,)
             )
           },
           initialRoute: '/login',

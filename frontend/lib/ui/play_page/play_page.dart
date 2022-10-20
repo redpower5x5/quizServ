@@ -24,13 +24,13 @@ class PlayPage extends StatelessWidget {
                   maxWidth: 500
                 ),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     children: [
                       Flexible(
                         flex: 2,
                         child: Padding(
-                          padding: EdgeInsets.symmetric(vertical: 20),
+                          padding: const EdgeInsets.symmetric(vertical: 20),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -39,7 +39,7 @@ class PlayPage extends StatelessWidget {
                                   stream: playPageBloc.questionId,
                                   builder: (_, s) => Text(s.requireData, style: Theme.of(context).textTheme.headline4,)
                               ),
-                              SizedBox(height: 20,),
+                              const SizedBox(height: 20,),
                               Flexible(
                                 child: StreamBuilder<String>(
                                   initialData: 'Ожидание...',
@@ -47,7 +47,7 @@ class PlayPage extends StatelessWidget {
                                   builder: (_, s) => TitleText(s.requireData),
                                 ),
                               ),
-                              SizedBox(height: 40,),
+                              const SizedBox(height: 40,),
                               StreamBuilder<TimerState>(
                                 initialData: TimerState('--:--', theme.currentTheme.accentColor),
                                 stream: playPageBloc.timer,
@@ -71,15 +71,15 @@ class PlayPage extends StatelessWidget {
                                   stream: playPageBloc.answersList,
                                   builder: (_, s) =>
                                       GridView.builder(
-                                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                             crossAxisCount: 2,
                                             crossAxisSpacing: 18,
                                             mainAxisSpacing: 18,
                                             childAspectRatio: 155/155,
                                           ),
-                                          padding: EdgeInsets.only(bottom: 20),
+                                          padding: const EdgeInsets.only(bottom: 20),
                                           shrinkWrap: true,
-                                          physics: NeverScrollableScrollPhysics(),
+                                          physics: const NeverScrollableScrollPhysics(),
                                           itemCount: 4,
                                           itemBuilder: (_, i) =>
                                               ChooseButton(

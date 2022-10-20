@@ -59,7 +59,7 @@ class ResultPage extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: StreamBuilder<List<UserState>>(
-                                initialData: [],
+                                initialData: const [],
                                 stream: resultPageBloc.userList,
                                 builder: (_, s) => ListView.builder(
                                     itemCount: s.requireData.length+2,
