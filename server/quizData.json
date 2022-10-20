@@ -187,13 +187,13 @@
           },
           {
             "answer_id": 2,
-            "text" : "МИСИС",
-            "correct" : true
+            "text" : "ЭУПП",
+            "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "ЭУПП",
-            "correct" : false
+            "text" : "МИСИС",
+            "correct" : true
           },
           {
             "answer_id": 4,
