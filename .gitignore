@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 /dist
+/frontend/.dart_tool
+*.dill*
 
 
 # local env files

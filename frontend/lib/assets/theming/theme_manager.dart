@@ -12,7 +12,7 @@ class ThemeManager extends ChangeNotifier {
     return _entity;
   }
 
-  BaseTheme _currentTheme = DarkTheme();
+  BaseTheme _currentTheme = LightTheme();
 
   BaseTheme get currentTheme => _currentTheme;
 
@@ -20,6 +20,4 @@ class ThemeManager extends ChangeNotifier {
     _currentTheme = theme;
     notifyListeners();
   }
-
-
 }

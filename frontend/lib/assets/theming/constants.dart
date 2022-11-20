@@ -4,15 +4,17 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 abstract class BaseColors {
-  Color get black => const Color(0xFF282828);
-  Color get grey => const Color(0xFF959AB0);
+  Color get black => const Color(0xFF040B15);
+  Color get black_tinted => const Color(0xFFC9C9C9);
+  Color get grey => const Color(0xFFBEB6AE);
   Color get white => const Color(0xFFFFFFFF);
 
-  Color get yellow => const Color(0xFFFDFF90);
-  Color get green => const Color(0xFF90FFA2);
-  Color get blue => const Color(0xFF90E4FF);
-  Color get purple => const Color(0xFFC059FF);
-  Color get red => const Color(0xFFFF90A4);
+  Color get yellow => const Color(0xFF0077FF);
+  Color get yellow_transp => Color(0xFFBFDDFF);
+  Color get green => const Color(0xFF17D685);
+  Color get blue => const Color(0xFF00EAFF);
+  Color get purple => const Color(0xFF8024C0);
+  Color get red => const Color(0xFFFF3985);
 }
 
 abstract class BaseTheme extends BaseColors {
