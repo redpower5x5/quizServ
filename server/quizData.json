@@ -2,328 +2,403 @@
     "questions": [
       {
         "question_id": 1,
-        "question_text": "Сколько статуй у горного института?",
+        "question_text": "Что развивает VK?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "3",
-            "correct" : false
+            "text" : "Сервисы, которые помогают людям решать повседневные задачи онлайн",
+            "correct" : true
           },
           {
             "answer_id": 2,
-            "text" : "5",
+            "text" : "Криптовалюту, которая помогает людям зарабатывать",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "8",
-            "correct" : true
+            "text" : "Сервисы, которые помогают людям крепко спать",
+            "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "10",
+            "text" : "Продукты, которые производят на заводе",
             "correct" : false
           }
         ]
       },
       {
         "question_id": 2,
-        "question_text": "Кто снимал свой клип в МИСИС?",
+        "question_text": "В каком году появилась социальная сеть ВКонтакте?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "Бузова",
+            "text" : "2005",
             "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "МИСиС медиа",
-            "correct" :  false
+            "text" : "2006",
+            "correct" :  true
           },
           {
             "answer_id": 3,
-            "text" : "Джарахов",
+            "text" : "2007",
             "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "Моргенштерн",
-            "correct" : true
+            "text" : "2008",
+            "correct" : false
           }
         ]
       },{
         "question_id": 3,
-        "question_text": "Сколько этажей в самом высоком корпусе нашего Универа?",
+        "question_text": "Кто в IT-компании «ведет» продукт от задумки до его выхода на рынок, поддерживает и улучшает его",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "11",
+            "text" : "Системный администратор",
             "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "13",
+            "text" : "Коуч",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "15",
-            "correct" : false
+            "text" : "Продакт-менеджер",
+            "correct" : true
           },
           {
             "answer_id": 4,
-            "text" : "14",
-            "correct" : true
+            "text" : "Аналитик",
+            "correct" : false
           }
         ]
       },{
         "question_id": 4,
-        "question_text": "Самый старый корпус МИСИС:",
+        "question_text": "Что из перечисленного является сервисом компании VK?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "К",
+            "text" : "Каршеринг «Делимобиль»",
             "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "Л",
+            "text" : "Интернет-аптека «ЕАптека»",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "Г",
-            "correct" : true
+            "text" : "Интернет-магазин «Lamoda»",
+            "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "Б",
-            "correct" : false
+            "text" : "Онлайн-магазин с доставкой «Самокат»",
+            "correct" : true
           }
         ]
       },{
         "question_id": 5,
-        "question_text": "Что находится под пирамидой МИСИС?",
+        "question_text": "Специалист по программированию, составлению программ для ЭВМ - это…",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "Инжиниринговый центр",
+            "text" : "Программист",
             "correct" : true
           },
           {
             "answer_id": 2,
-            "text" : "Секретная столовая",
+            "text" : "Геймер",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "Ночной клуб",
+            "text" : "Коммунист",
             "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "Ничего",
+            "text" : "Зумер",
             "correct" : false
           }
         ]
       },{
         "question_id": 6,
-        "question_text": "В начале 20-го века здесь (на заводе 'Кристалл') было производство чего-то. Произвол чего? ",
+        "question_text": "Как зовут голосового помощника умной колонки VK Капсулы?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "Носков",
-            "correct" : false
+            "text" : "Маруся",
+            "correct" : true
           },
           {
             "answer_id": 2,
-            "text" : "Патронов",
+            "text" : "Алиса",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "Телефонов",
+            "text" : "Зина",
             "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "Спирта",
-            "correct" : true
+            "text" : "Сюзанна",
+            "correct" : false
           }
         ]
       },{
         "question_id": 7,
-        "question_text": "Сколько столовых на территории универа?",
+        "question_text": "Как называется ежегодный музыкально-развлекательный фестиваль VK?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "5",
+            "text" : "VK Sunset",
             "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "3",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "4",
+            "text" : "VK Fest",
             "correct" : true
           },
           {
+            "answer_id": 3,
+            "text" : "VK Fast",
+            "correct" : false
+          },
+          {
             "answer_id": 4,
-            "text" : "2",
+            "text" : "VK Club",
             "correct" : false
           }
         ]
       },{
         "question_id": 8,
-        "question_text": "Где самые красивые девушки?",
+        "question_text": "Что из перечисленного не является языком программирования?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "ИБО",
+            "text" : "Basic",
             "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "ЭУПП",
+            "text" : "TurboPascal",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "МИСИС",
-            "correct" : true
+            "text" : "Python",
+            "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "ИНМИН",
-            "correct" : false
+            "text" : "Porsche",
+            "correct" : true
           }
         ]
       },{
         "question_id": 9,
-        "question_text": "Где Самые Крутые Парни?",
+        "question_text": "Название сервиса коротких вертикальных видео ВКонтакте?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "Горный",
+            "text" : "VK Экшн",
             "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "МИСИС",
+            "text" : "VK Клипы",
             "correct" : true
           },
           {
             "answer_id": 3,
-            "text" : "ЭкоТех",
+            "text" : "VK Реки",
             "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "ИТКН",
+            "text" : "VK Вертикаль",
             "correct" : false
           }
         ]
       },{
         "question_id": 10,
-        "question_text": "Кто Победил на Кубке Первокурсников в 2021 году?",
+        "question_text": "Вредоносная программа, выполняющая нежелательные функции на вашем ПК?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "ЭУПП/Горный",
+            "text" : "Болезнь",
             "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "ИТКН/ИНМиН",
+            "text" : "Зараза",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "Горный/ЭкоТех",
-            "correct" : false
+            "text" : "Вирус",
+            "correct" : true
           },
           {
             "answer_id": 4,
-            "text" : "ИТКН/ЭУПП",
+            "text" : "Хворь",
             "correct" : true
           }
         ]
       },{
         "question_id": 11,
-        "question_text": "Кто победил на Кубке в 2016 году?",
+        "question_text": "Как называют взломщика компьютерных программ?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "ЭУПП",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "Горный",
+            "text" : "Хакер",
             "correct" : true
           },
           {
+            "answer_id": 2,
+            "text" : "Брокер",
+            "correct" : false
+          },
+          {
             "answer_id": 3,
-            "text" : "ИНМИН",
+            "text" : "Покер",
             "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "ИБО",
+            "text" : "Красавчик",
             "correct" : false
           }
         ]
       },{
         "question_id": 12,
-        "question_text": "Кто победил на Кубке в 2022 году?",
+        "question_text": "На сколько языков переведен интерфейс социальной сети ВКонтакте?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "ЭУПП",
-            "correct" : true
+            "text" : "72",
+            "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "Горный",
+            "text" : "64",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "ИТКН",
+            "text" : "90",
             "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "ИБО",
-            "correct" : false
+            "text" : "86",
+            "correct" : true
           }
         ]
       },{
         "question_id": 13,
-        "question_text": "Самый лучший университет Мира?",
+        "question_text": "Часть ПК, отвечающая за демонстрацию текстовой и графической информации?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "МИСИС",
-            "correct" : true
+            "text" : "Мышь",
+            "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "МИСИС",
-            "correct" : true
+            "text" : "Клавиатура",
+            "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "МИСИС",
+            "text" : "Монитор",
             "correct" : true
           },
           {
             "answer_id": 4,
-            "text" : "МИСИС",
+            "text" : "Процессор",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 14,
+        "question_text": "Как называется платёжная система ВКонтакте?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "VK Pay",
             "correct" : true
+          },
+          {
+            "answer_id": 2,
+            "text" : "VK Money",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "VK Check",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "VK Click",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 15,
+        "question_text": "Как называется строго определенная последовательность действий при решении задачи?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "Уравнение",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "План A",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Алгоритм",
+            "correct" : true
+          },
+          {
+            "answer_id": 4,
+            "text" : "План Б",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 16,
+        "question_text": "Какая образовательная онлайн-платформа принадлежит VK?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "SkillBox",
+            "correct" : true
+          },
+          {
+            "answer_id": 2,
+            "text" : "SkillBrain",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "SkillBill",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Skill VK",
+            "correct" : false
           }
         ]
       }
