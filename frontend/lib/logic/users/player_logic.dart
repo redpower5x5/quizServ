@@ -13,13 +13,13 @@ import 'package:quiz_app/models/result_page/result_page_user_state.dart';
 import 'package:socket_io_client/socket_io_client.dart';
 
 class PlayerLogic implements UserLogic {
-
   LoginPageBloc loginPageBloc;
   PlayPageBloc playPageBloc;
   ResultPageBloc resultPageBloc;
   NavigatorBloc navigatorBloc;
 
-  PlayerLogic(this.loginPageBloc, this.playPageBloc, this.resultPageBloc, this.navigatorBloc);
+  PlayerLogic(this.loginPageBloc, this.playPageBloc, this.resultPageBloc,
+      this.navigatorBloc);
 
   late String name;
 
@@ -63,19 +63,19 @@ class PlayerLogic implements UserLogic {
       AnswerState(data['question']['answers'][3]['text'], colors[3])
     ]);
 
-    timer = startTimer((data['timer']-2)*100,
-            () {if (!isAnswered)  socket.emit('answer', 0);},
-            (t, milliseconds) {
-              pointMultiplier = t/(milliseconds/100).floor();
-              playPageBloc.setTimer.add(t);
-            }
-    );
+    timer = startTimer((data['timer'] - 2) * 100, () {
+      if (!isAnswered) socket.emit('answer', 0);
+    }, (t, milliseconds) {
+      pointMultiplier = t / (milliseconds / 100).floor();
+      playPageBloc.setTimer.add(t);
+    });
 
     if (answerListSubscription != null) answerListSubscription!.cancel();
 
     if (!data['isAnswered']) {
       answerListSubscription = playPageBloc.answer.listen((event) {
-        socket.emit('answer',
+        socket.emit(
+            'answer',
             (data['question']['answers'][event]['correct'] == true ? 1 : 0) *
                 pointMultiplier);
         print(data['question']['answers'][event]['correct']);
@@ -187,20 +187,32 @@ class PlayerLogic implements UserLogic {
   @override
   void results(Map data) {
     navigatorBloc.setRoute.add('/result');
-    resultPageBloc.setQuestionId.add(lastQuestion != null? 'Вопрос $lastQuestion из $totalQuestions' : 'Ожидание следующего раунда');
+    resultPageBloc.setQuestionId.add(lastQuestion != null
+        ? 'Вопрос $lastQuestion из $totalQuestions'
+        : 'Ожидание следующего раунда');
 
     int currentUserId = -1;
 
-    var users = List.generate(data.length, (index) => UserState(
-        index+1,
-            () { if (data.keys.toList()[index] == name) currentUserId = index; return data.keys.toList()[index];}(),
-        data[data.keys.toList()[index]]['total'],
-        data[data.keys.toList()[index]]['recent'],
-        index == 0? ThemeManager().currentTheme.purple : index == 1? ThemeManager().currentTheme.red : index == 2? ThemeManager().currentTheme.yellow : ThemeManager().currentTheme.white
-    ));
+    var users = List.generate(
+        data.length,
+        (index) => UserState(index + 1, () {
+              if (data.keys.toList()[index] == name) currentUserId = index;
+              return data.keys.toList()[index];
+            }(),
+                data[data.keys.toList()[index]]['total'],
+                data[data.keys.toList()[index]]['recent'],
+                index == 0
+                    ? ThemeManager().currentTheme.red
+                    : index == 1
+                        ? ThemeManager().currentTheme.blue
+                        : index == 2
+                            ? ThemeManager().currentTheme.yellow
+                            : ThemeManager().currentTheme.white));
 
     resultPageBloc.setUserList.add(users);
-    resultPageBloc.setCurrentUser.add(currentUserId != -1? users[currentUserId] : UserState(0, '-', 0, 0, ThemeManager().currentTheme.grey));
+    resultPageBloc.setCurrentUser.add(currentUserId != -1
+        ? users[currentUserId]
+        : UserState(0, '-', 0, 0, ThemeManager().currentTheme.grey));
   }
 
   @override
@@ -210,18 +222,27 @@ class PlayerLogic implements UserLogic {
 
     int currentUserId = -1;
 
-    var users = List.generate(data.length, (index) => UserState(
-        index+1,
-            () { if (data.keys.toList()[index] == name) currentUserId = index; return data.keys.toList()[index];}(),
-        data[data.keys.toList()[index]]['total'],
-        data[data.keys.toList()[index]]['recent'],
-        index == 0? ThemeManager().currentTheme.purple : index == 1? ThemeManager().currentTheme.red : index == 2? ThemeManager().currentTheme.yellow : ThemeManager().currentTheme.white
-    ));
+    var users = List.generate(
+        data.length,
+        (index) => UserState(index + 1, () {
+              if (data.keys.toList()[index] == name) currentUserId = index;
+              return data.keys.toList()[index];
+            }(),
+                data[data.keys.toList()[index]]['total'],
+                data[data.keys.toList()[index]]['recent'],
+                index == 0
+                    ? ThemeManager().currentTheme.red
+                    : index == 1
+                        ? ThemeManager().currentTheme.blue
+                        : index == 2
+                            ? ThemeManager().currentTheme.yellow
+                            : ThemeManager().currentTheme.white));
 
     resultPageBloc.setUserList.add(users);
-    resultPageBloc.setCurrentUser.add(currentUserId != -1? users[currentUserId] : UserState(0, '-', 0, 0, ThemeManager().currentTheme.grey));
+    resultPageBloc.setCurrentUser.add(currentUserId != -1
+        ? users[currentUserId]
+        : UserState(0, '-', 0, 0, ThemeManager().currentTheme.grey));
   }
-
 
   @override
   void admin(Socket socket, Function onReset) {
@@ -237,8 +258,9 @@ class PlayerLogic implements UserLogic {
     ]..shuffle();
   }
 
-  Timer startTimer(double milliseconds, Function onEnds, Function(int, double) onTick) {
-    int t = (milliseconds/100).floor();
+  Timer startTimer(
+      double milliseconds, Function onEnds, Function(int, double) onTick) {
+    int t = (milliseconds / 100).floor();
     return Timer.periodic(Duration(seconds: 1), (timer) {
       if (t == 0) {
         onEnds();

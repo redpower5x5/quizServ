@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
                       headline3: GoogleFonts.montserrat(
                           textStyle: TextStyle(
                               fontSize: 21,
-                              color: themeManager.currentTheme.white,
+                              color: themeManager.currentTheme.textColorInverse,
                               fontWeight: FontWeight.w800)),
                       headline4: GoogleFonts.montserrat(
                           textStyle: TextStyle(
@@ -81,7 +81,7 @@ class _MyAppState extends State<MyApp> {
                       subtitle2: GoogleFonts.montserrat(
                           textStyle: TextStyle(
                         fontSize: 15,
-                        color: themeManager.currentTheme.white,
+                        color: themeManager.currentTheme.textColorInverse,
                         fontWeight: FontWeight.w800,
                       )),
                     ),

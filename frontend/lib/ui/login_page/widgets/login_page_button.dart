@@ -83,7 +83,12 @@ class _LoginPageButtonState extends State<LoginPageButton> {
                               child: Center(
                                 child: Text(
                                   widget.text,
-                                  style: Theme.of(context).textTheme.headline3,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline3
+                                      ?.apply(
+                                        color: Colors.white,
+                                      ),
                                 ),
                               ),
                             ),
