@@ -252,7 +252,7 @@ class PlayerLogic implements UserLogic {
   List getColors() {
     return [
       ThemeManager().currentTheme.yellow,
-      ThemeManager().currentTheme.blue,
+      ThemeManager().currentTheme.green,
       ThemeManager().currentTheme.purple,
       ThemeManager().currentTheme.red
     ]..shuffle();

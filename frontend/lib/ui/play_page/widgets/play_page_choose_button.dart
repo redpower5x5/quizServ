@@ -68,6 +68,7 @@ class _ChooseButtonState extends State<ChooseButton> {
                             color: Colors.white,
                           ),
                       textAlign: TextAlign.center,
+                      maxLines: 4,
                       wrapWords: true,
                     ),
                   )),
