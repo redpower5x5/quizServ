@@ -9,23 +9,27 @@ import 'package:socket_io_client/src/socket.dart';
 import '../../models/play_page/play_page_bloc.dart';
 
 class AdminLogic extends UserLogic {
-
   LoginPageBloc loginPageBloc;
   PlayPageBloc playPageBloc;
   ResultPageBloc resultPageBloc;
   NavigatorBloc navigatorBloc;
 
-  AdminLogic(this.loginPageBloc, this.playPageBloc, this.resultPageBloc, this.navigatorBloc);
+  AdminLogic(this.loginPageBloc, this.playPageBloc, this.resultPageBloc,
+      this.navigatorBloc);
 
   Map<String, String> users = {};
 
   @override
   void admin(Socket socket, Function onReset) {
     playPageBloc.setAnswersList.add([
-      AnswerState('Показать следующий вопрос', ThemeManager().currentTheme.white),
-      AnswerState('Остановить время, показать результат', ThemeManager().currentTheme.white),
-      AnswerState('Рестарт сервера', ThemeManager().currentTheme.white),
-      AnswerState('Информация об игроках', ThemeManager().currentTheme.white)
+      AnswerState('Показать следующий вопрос',
+          ThemeManager().currentTheme.textColorInverse),
+      AnswerState('Остановить время, показать результат',
+          ThemeManager().currentTheme.textColorInverse),
+      AnswerState(
+          'Рестарт сервера', ThemeManager().currentTheme.textColorInverse),
+      AnswerState(
+          'Информация об игроках', ThemeManager().currentTheme.textColorInverse)
     ]);
 
     playPageBloc.setQuestion.add('Панель администратора');
@@ -39,7 +43,6 @@ class AdminLogic extends UserLogic {
       print(data + ' disconnected');
       users.remove(data);
     });
-
 
     playPageBloc.answer.listen((event) {
       switch (event) {
@@ -89,5 +92,4 @@ class AdminLogic extends UserLogic {
   void init(String name) {
     // TODO: implement init
   }
-
 }
