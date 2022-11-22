@@ -3,6 +3,9 @@ node_modules
 /dist
 /frontend/.dart_tool
 *.dill*
+/frontend/.packages
+/frontend/.pub-cache
+/frontend/build
 
 
 # local env files

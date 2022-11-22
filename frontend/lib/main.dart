@@ -41,49 +41,42 @@ class _MyAppState extends State<MyApp> {
                 theme: ThemeData(
                     primarySwatch: themeManager.currentTheme.accentColor
                         .generateMaterial(),
+                    fontFamily: 'VK',
                     textTheme: TextTheme(
-                      headline1: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              fontSize: 36,
-                              color: themeManager.currentTheme.textColorInverse,
-                              fontWeight: FontWeight.w800)),
-                      headline2: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              fontSize: 21,
-                              color: themeManager.currentTheme.textColorInverse,
-                              fontWeight: FontWeight.w500)),
-                      headline3: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              fontSize: 21,
-                              color: themeManager.currentTheme.textColorInverse,
-                              fontWeight: FontWeight.w800)),
-                      headline4: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              fontSize: 17,
-                              color: themeManager.currentTheme.grey,
-                              fontWeight: FontWeight.w800)),
-                      headline5: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              fontSize: 24,
-                              color: themeManager.currentTheme.textColorInverse,
-                              fontWeight: FontWeight.w700)),
-                      headline6: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              fontSize: 24,
-                              color: themeManager.currentTheme.black,
-                              fontWeight: FontWeight.w700)),
-                      subtitle1: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
+                      headline1: TextStyle(
+                          fontSize: 36,
+                          color: themeManager.currentTheme.textColorInverse,
+                          fontWeight: FontWeight.w800),
+                      headline2: TextStyle(
+                          fontSize: 21,
+                          color: themeManager.currentTheme.textColorInverse,
+                          fontWeight: FontWeight.w500),
+                      headline3: TextStyle(
+                          fontSize: 21,
+                          color: themeManager.currentTheme.textColorInverse,
+                          fontWeight: FontWeight.w800),
+                      headline4: TextStyle(
+                          fontSize: 17,
+                          color: themeManager.currentTheme.grey,
+                          fontWeight: FontWeight.w800),
+                      headline5: TextStyle(
+                          fontSize: 24,
+                          color: themeManager.currentTheme.textColorInverse,
+                          fontWeight: FontWeight.w700),
+                      headline6: TextStyle(
+                          fontSize: 24,
+                          color: themeManager.currentTheme.black,
+                          fontWeight: FontWeight.w700),
+                      subtitle1: TextStyle(
                         fontSize: 14,
                         color: themeManager.currentTheme.textColorInverse,
                         fontWeight: FontWeight.w500,
-                      )),
-                      subtitle2: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
+                      ),
+                      subtitle2: TextStyle(
                         fontSize: 15,
                         color: themeManager.currentTheme.textColorInverse,
                         fontWeight: FontWeight.w800,
-                      )),
+                      ),
                     ),
                     backgroundColor: themeManager.currentTheme.backgroundColor,
                     inputDecorationTheme: InputDecorationTheme(
@@ -99,11 +92,10 @@ class _MyAppState extends State<MyApp> {
                             width: 2.2,
                           ),
                           borderRadius: BorderRadius.circular(16)),
-                      hintStyle: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              fontSize: 21,
-                              color: themeManager.currentTheme.textColorInverse,
-                              fontWeight: FontWeight.w500)),
+                      hintStyle: TextStyle(
+                          fontSize: 21,
+                          color: themeManager.currentTheme.textColorInverse,
+                          fontWeight: FontWeight.w500),
                     )),
                 routes: {
                   '/login': (c) => NavigatorBLocProvider(
