@@ -7,6 +7,7 @@ import 'package:quiz_app/models/result_page/result_page_user_state.dart';
 import 'package:quiz_app/ui/result_page/widgets/result_page_name_container.dart';
 import 'package:quiz_app/ui/widgets/title_text.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:html' as html;
 
 class ResultPage extends StatelessWidget {
   final ResultPageBloc resultPageBloc;
@@ -189,6 +190,28 @@ class ResultPage extends StatelessWidget {
                                   : const SizedBox()),
                         ),
                       )),
+                  Positioned(
+                    top: 0.0,
+                    right: 0.0,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: StreamBuilder<String>(
+                          initialData: '...',
+                          stream: resultPageBloc.questionId,
+                          builder: (_, s) => s.requireData != 'Конец игры!'
+                              ? const SizedBox()
+                              : InkWell(
+                                  onTap: () => {
+                                        html.window.open(
+                                            'https://vk.onixx.org', "_self")
+                                      },
+                                  child: Container(
+                                    height: 20.0,
+                                    width: 20.0,
+                                    color: Colors.transparent,
+                                  ))),
+                    ),
+                  ),
                 ],
               ),
             ))));
