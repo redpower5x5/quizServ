@@ -69,6 +69,8 @@ class _ChooseButtonState extends State<ChooseButton> {
                           ),
                       textAlign: TextAlign.center,
                       maxLines: 5,
+                      maxFontSize: 20,
+                      wrapWords: true,
                     ),
                   )),
             ));

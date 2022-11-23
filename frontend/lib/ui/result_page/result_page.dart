@@ -51,7 +51,7 @@ class ResultPage extends StatelessWidget {
                                         ),
                                       ),
                                       const SizedBox(
-                                        height: 20,
+                                        height: 10,
                                       ),
                                       const TitleText('Лидерборд'),
                                       const SizedBox(
