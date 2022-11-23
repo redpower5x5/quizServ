@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:quiz_app/assets/theming/theme_manager.dart';
 import 'package:quiz_app/models/result_page/result_page_bloc.dart';
 import 'package:quiz_app/models/result_page/result_page_user_state.dart';
 import 'package:quiz_app/ui/result_page/widgets/result_page_name_container.dart';
 import 'package:quiz_app/ui/widgets/title_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ResultPage extends StatelessWidget {
   final ResultPageBloc resultPageBloc;
@@ -34,6 +36,9 @@ class ResultPage extends StatelessWidget {
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
+                                      const SizedBox(
+                                        height: 40,
+                                      ),
                                       StreamBuilder<String>(
                                         initialData: '...',
                                         stream: resultPageBloc.questionId,
@@ -146,7 +151,44 @@ class ResultPage extends StatelessWidget {
                                         )),
                                   )),
                             );
-                          }))
+                          })),
+                  Align(
+                      alignment: Alignment.topCenter,
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 500),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 20),
+                          child: StreamBuilder<String>(
+                              initialData: '...',
+                              stream: resultPageBloc.questionId,
+                              builder: (_, s) => s.requireData == 'Конец игры!'
+                                  ? InkWell(
+                                      onTap: () =>
+                                          launch('https://quolly-app.tilda.ws'),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text("Создай свой квиз с Quolly",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .headline4
+                                                  ?.apply(
+                                                    color: Color(0xffDF3042),
+                                                    decoration: TextDecoration
+                                                        .underline,
+                                                  ),
+                                              textAlign: TextAlign.left),
+                                          const SizedBox(width: 10),
+                                          SvgPicture.asset(
+                                            'assets/quolly.svg',
+                                          )
+                                        ],
+                                      ))
+                                  : const SizedBox()),
+                        ),
+                      )),
                 ],
               ),
             ))));
