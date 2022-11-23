@@ -190,28 +190,6 @@ class ResultPage extends StatelessWidget {
                                   : const SizedBox()),
                         ),
                       )),
-                  Positioned(
-                    top: 0.0,
-                    right: 0.0,
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: StreamBuilder<String>(
-                          initialData: '...',
-                          stream: resultPageBloc.questionId,
-                          builder: (_, s) => s.requireData != 'Конец игры!'
-                              ? const SizedBox()
-                              : InkWell(
-                                  onTap: () => {
-                                        html.window.open(
-                                            'https://vk.onixx.org', "_self")
-                                      },
-                                  child: Container(
-                                    height: 20.0,
-                                    width: 20.0,
-                                    color: Colors.transparent,
-                                  ))),
-                    ),
-                  ),
                 ],
               ),
             ))));
