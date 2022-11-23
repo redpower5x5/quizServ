@@ -37,7 +37,7 @@ class ResultPage extends StatelessWidget {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       const SizedBox(
-                                        height: 40,
+                                        height: 50,
                                       ),
                                       StreamBuilder<String>(
                                         initialData: '...',
