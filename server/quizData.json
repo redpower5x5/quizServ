@@ -2,26 +2,26 @@
     "questions": [
       {
         "question_id": 1,
-        "question_text": "Что развивает VK?",
+        "question_text": "В каком году возник КВН?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "Сервисы, которые помогают людям решать повседневные задачи онлайн",
-            "correct" : true
-          },
-          {
-            "answer_id": 2,
-            "text" : "Криптовалюту, которая помогает людям зарабатывать",
+            "text" : "1990",
             "correct" : false
           },
           {
+            "answer_id": 2,
+            "text" : "1961",
+            "correct" : true
+          },
+          {
             "answer_id": 3,
-            "text" : "Сервисы, которые помогают людям крепко спать",
+            "text" : "2000",
             "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "Продукты, которые производят на заводе",
+            "text" : "1930",
             "correct" : false
           }
         ]
@@ -53,26 +53,26 @@
         ]
       },{
         "question_id": 3,
-        "question_text": "Кто в IT-компании «ведет» продукт от задумки до его выхода на рынок, поддерживает и улучшает его",
+        "question_text": "Какая высота самого высокого здания в мире?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "Системный администратор",
+            "text" : "100",
             "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "Коуч",
+            "text" : "750",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "Продакт-менеджер",
+            "text" : "828",
             "correct" : true
           },
           {
             "answer_id": 4,
-            "text" : "Аналитик",
+            "text" : "832",
             "correct" : false
           }
         ]
@@ -103,26 +103,26 @@
         ]
       },{
         "question_id": 5,
-        "question_text": "Специалист по программированию, составлению программ для ЭВМ - это…",
+        "question_text": "В каком городе России есть метро?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "Программист",
+            "text" : "Самара",
             "correct" : true
           },
           {
             "answer_id": 2,
-            "text" : "Геймер",
+            "text" : "Пенза",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "Коммунист",
+            "text" : "Калининград",
             "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "Зумер",
+            "text" : "Нижний Тагил ",
             "correct" : false
           }
         ]
@@ -153,6 +153,31 @@
         ]
       },{
         "question_id": 7,
+        "question_text": "Как назывался древний материк на планете Земля?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "Пангея",
+            "correct" : true
+          },
+          {
+            "answer_id": 2,
+            "text" : "Росшит",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Анталатида",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Интерра",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 8,
         "question_text": "Как называется ежегодный музыкально-развлекательный фестиваль VK?",
         "answers": [ 
           {
@@ -177,157 +202,32 @@
           }
         ]
       },{
-        "question_id": 8,
-        "question_text": "Что из перечисленного не является языком программирования?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Basic",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "TurboPascal",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Python",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "Porsche",
-            "correct" : true
-          }
-        ]
-      },{
         "question_id": 9,
-        "question_text": "Название сервиса коротких вертикальных видео ВКонтакте?",
+        "question_text": "Что добавляют в щи по старым русским рецептам?",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "VK Экшн",
+            "text" : "Репа",
             "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "VK Клипы",
-            "correct" : true
+            "text" : "Картофель",
+            "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "VK Реки",
+            "text" : "Мед",
             "correct" : false
           },
           {
             "answer_id": 4,
-            "text" : "VK Вертикаль",
-            "correct" : false
+            "text" : "Простокваша",
+            "correct" : true
           }
         ]
       },{
         "question_id": 10,
-        "question_text": "Вредоносная программа, выполняющая нежелательные функции на вашем ПК?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Болезнь",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "Зараза",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Вирус",
-            "correct" : true
-          },
-          {
-            "answer_id": 4,
-            "text" : "Хворь",
-            "correct" : true
-          }
-        ]
-      },{
-        "question_id": 11,
-        "question_text": "Как называют взломщика компьютерных программ?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Хакер",
-            "correct" : true
-          },
-          {
-            "answer_id": 2,
-            "text" : "Брокер",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Покер",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "Красавчик",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 12,
-        "question_text": "На сколько языков переведен интерфейс социальной сети ВКонтакте?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "72",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "64",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "90",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "86",
-            "correct" : true
-          }
-        ]
-      },{
-        "question_id": 13,
-        "question_text": "Часть ПК, отвечающая за демонстрацию текстовой и графической информации?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Мышь",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "Клавиатура",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Монитор",
-            "correct" : true
-          },
-          {
-            "answer_id": 4,
-            "text" : "Процессор",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 14,
         "question_text": "Как называется платёжная система ВКонтакте?",
         "answers": [ 
           {
@@ -352,32 +252,32 @@
           }
         ]
       },{
-        "question_id": 15,
-        "question_text": "Как называется строго определенная последовательность действий при решении задачи?",
+        "question_id": 11,
+        "question_text": "Скульптура «Медный всадник» посвящена …",
         "answers": [ 
           {
             "answer_id": 1,
-            "text" : "Уравнение",
+            "text" : "А.С. Пушкину",
             "correct" : false
           },
           {
             "answer_id": 2,
-            "text" : "План A",
+            "text" : "Николаю II",
             "correct" : false
           },
           {
             "answer_id": 3,
-            "text" : "Алгоритм",
+            "text" : "Петру Великому",
             "correct" : true
           },
           {
             "answer_id": 4,
-            "text" : "План Б",
+            "text" : "Русскому воину",
             "correct" : false
           }
         ]
       },{
-        "question_id": 16,
+        "question_id": 12,
         "question_text": "Какая образовательная онлайн-платформа принадлежит VK?",
         "answers": [ 
           {
@@ -399,6 +299,81 @@
             "answer_id": 4,
             "text" : "Skill VK",
             "correct" : false
+          }
+        ]
+      },{
+        "question_id": 13,
+        "question_text": "Что получают бобры в результате строительства?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "Плотину",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Дом",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Беседку",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Хатку",
+            "correct" : true
+          }
+        ]
+      },{
+        "question_id": 14,
+        "question_text": "Какое число является чертовой дюжиной?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "11",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "13",
+            "correct" : true
+          },
+          {
+            "answer_id": 3,
+            "text" : "14",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "666",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 15,
+        "question_text": "Именно этих животных держат в кошарах. Каких?",
+        "answers": [ 
+          {
+            "answer_id": 1,
+            "text" : "Свиней",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Коров",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Волков",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Овец",
+            "correct" : true
           }
         ]
       }
