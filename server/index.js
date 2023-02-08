@@ -159,6 +159,10 @@ io.on("connection", (socket) => {
     }
   });
 
+  socket.on("answer_data", (answer_num) => {
+    console.log(`${socket.username} answered ${answer_num}`);
+  });
+
   socket.on("emotion", (questionId) => {
     if (answersStore.checkStats(socket.username)) {
       console.log("already answered");
