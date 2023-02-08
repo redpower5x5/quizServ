@@ -2,57 +2,81 @@
   "questions": [
     {
       "question_id": 1,
-      "question_text": "Как называется графический векторный редактор?",
+      "question_text": "Какого направления НЕ существует в дизайне?",
       "answers": [ 
         {
           "answer_id": 1,
-          "text" : "Figma",
+          "text" : "Промышленного",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Коммуникационного",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Идеального",
+          "correct" : true
+        },
+        {
+          "answer_id": 4,
+          "text" : "Продуктового",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 2,
+      "question_text": "Что означает глагол to design?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "Создавать",
           "correct" : true
         },
         {
           "answer_id": 2,
-          "text" : "Word",
+          "text" : "Делать красиво",
           "correct" : false
         },
         {
           "answer_id": 3,
-          "text" : "Premiere Pro",
+          "text" : "Обрабатывать",
           "correct" : false
         },
         {
           "answer_id": 4,
-          "text" : "PyCharm",
-          "correct" : false
-        }
-      ]
-    },
-    {
-      "question_id": 2,
-      "question_text": "Рисование на бумаге относится к какой технологии?",
-      "answers": [ 
-        {
-          "answer_id": 1,
-          "text" : "Цифровой",
-          "correct" : false
-        },
-        {
-          "answer_id": 2,
-          "text" : "Традиционной",
-          "correct" :  true
-        },
-        {
-          "answer_id": 3,
-          "text" : "Искусственный интеллект",
-          "correct" : false
-        },
-        {
-          "answer_id": 4,
-          "text" : "Векторной",
+          "text" : "Переделывать",
           "correct" : false
         }
       ]
     },{
       "question_id": 3,
+      "question_text": "Сколько видов дизайна существует?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "Более 20",
+          "correct" : true
+        },
+        {
+          "answer_id": 2,
+          "text" : "Менее 5",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Менее 10",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "Более 10",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 4,
       "question_text": "Какие записи относятся к абстрактным, а не к персональным данным?",
       "answers": [ 
         {
@@ -77,7 +101,7 @@
         }
       ]
     },{
-      "question_id": 4,
+      "question_id": 5,
       "question_text": "Каким образом можно оставить в тайне сам факт наличия каких-либо скрытых сообщений?",
       "answers": [ 
         {
@@ -102,7 +126,7 @@
         }
       ]
     },{
-      "question_id": 5,
+      "question_id": 6,
       "question_text": "Какой главный принцип полигонального моделирования?",
       "answers": [ 
         {
@@ -127,7 +151,7 @@
         }
       ]
     },{
-      "question_id": 6,
+      "question_id": 7,
       "question_text": "С чем сравнивают Rig?",
       "answers": [ 
         {
@@ -152,7 +176,7 @@
         }
       ]
     },{
-      "question_id": 7,
+      "question_id": 8,
       "question_text": "Сколько существует принципов  анимации?",
       "answers": [ 
         {
@@ -177,7 +201,7 @@
         }
       ]
     },{
-      "question_id": 8,
+      "question_id": 9,
       "question_text": "В каком городе находится завод БелАЗ?",
       "answers": [ 
         {
@@ -202,7 +226,7 @@
         }
       ]
     },{
-      "question_id": 9,
+      "question_id": 10,
       "question_text": "Какая самая большая грузоподъёмность БелАЗа?",
       "answers": [ 
         {
@@ -227,7 +251,7 @@
         }
       ]
     },{
-      "question_id": 10,
+      "question_id": 11,
       "question_text": "Какое название команды хакатонщиков из МИСиС существовало? Данный вопрос с подвохом – есть два правильных варианта ответа",
       "answers": [ 
         {
@@ -249,31 +273,6 @@
           "answer_id": 4,
           "text" : "Samurai kittens from MISIS",
           "correct" : true
-        }
-      ]
-    },{
-      "question_id": 11,
-      "question_text": "Какого направления НЕ существует в дизайне?",
-      "answers": [ 
-        {
-          "answer_id": 1,
-          "text" : "Промышленного",
-          "correct" : false
-        },
-        {
-          "answer_id": 2,
-          "text" : "Коммуникационного",
-          "correct" : false
-        },
-        {
-          "answer_id": 3,
-          "text" : "Идеального",
-          "correct" : true
-        },
-        {
-          "answer_id": 4,
-          "text" : "Продуктового",
-          "correct" : false
         }
       ]
     },{
