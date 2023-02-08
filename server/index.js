@@ -160,7 +160,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("answer_data", (answer_num) => {
-    console.log(`${socket.username} answered ${answer_num}`);
+    console.log(`${socket.username} data_log_select ${answer_num}`);
   });
 
   socket.on("emotion", (questionId) => {
