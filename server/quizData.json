@@ -1,306 +1,356 @@
 {
-    "questions": [
-      {
-        "question_id": 1,
-        "question_text": "Сколько статуй у горного института?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "3",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "5",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "8",
-            "correct" : true
-          },
-          {
-            "answer_id": 4,
-            "text" : "10",
-            "correct" : false
-          }
-        ]
-      },
-      {
-        "question_id": 2,
-        "question_text": "Кто снимал свой клип в МИСИС?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Бузова",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "МИСиС медиа",
-            "correct" :  false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Джарахов",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "Моргенштерн",
-            "correct" : true
-          }
-        ]
-      },{
-        "question_id": 3,
-        "question_text": "Сколько этажей в самом высоком корпусе нашего Универа?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "11",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "13",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "15",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "14",
-            "correct" : true
-          }
-        ]
-      },{
-        "question_id": 4,
-        "question_text": "Самый старый корпус МИСИС:",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "К",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "Л",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Г",
-            "correct" : true
-          },
-          {
-            "answer_id": 4,
-            "text" : "Б",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 5,
-        "question_text": "Что находится под пирамидой МИСИС?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Инжиниринговый центр",
-            "correct" : true
-          },
-          {
-            "answer_id": 2,
-            "text" : "Секретная столовая",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Ночной клуб",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "Ничего",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 6,
-        "question_text": "В начале 20х веков здесь было производство чего-то. Произвол чего? ",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Носков",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "Патронов",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Телефонов",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "Спирта",
-            "correct" : true
-          }
-        ]
-      },{
-        "question_id": 7,
-        "question_text": "Сколько столовых на территории универа?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "5",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "3",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "4",
-            "correct" : true
-          },
-          {
-            "answer_id": 4,
-            "text" : "2",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 8,
-        "question_text": "Где самые красивые девушки?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "ИБО",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "ЭУПП",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "МИСИС",
-            "correct" : true
-          },
-          {
-            "answer_id": 4,
-            "text" : "ИНМИН",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 9,
-        "question_text": "Где Самые Крутые Парни?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Горный",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "МИСИС",
-            "correct" : true
-          },
-          {
-            "answer_id": 3,
-            "text" : "ЭкоТех",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "ИТКН",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 10,
-        "question_text": "Кто Победил на Кубке Первокурсников в 2021 году?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "ЭУПП/Горный",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "ИТКН/ИНМиН",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Горный/ЭкоТех",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "ИТКН/ЭУПП",
-            "correct" : true
-          }
-        ]
-      },{
-        "question_id": 11,
-        "question_text": "Кто победил на Кубке в 2016 году?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "ЭУПП",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "Горный",
-            "correct" : true
-          },
-          {
-            "answer_id": 3,
-            "text" : "ИНМИН",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "ИБО",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 12,
-        "question_text": "Самый лучший университет Мира?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "МИСИС",
-            "correct" : true
-          },
-          {
-            "answer_id": 2,
-            "text" : "МИСИС",
-            "correct" : true
-          },
-          {
-            "answer_id": 3,
-            "text" : "МИСИС",
-            "correct" : true
-          },
-          {
-            "answer_id": 4,
-            "text" : "МИСИС",
-            "correct" : true
-          }
-        ]
-      }
-    ]
-  }
+  "questions": [
+    {
+      "question_id": 1,
+      "question_text": "Как называется графический векторный редактор?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "Figma",
+          "correct" : true
+        },
+        {
+          "answer_id": 2,
+          "text" : "Word",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Premiere Pro",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "PyCharm",
+          "correct" : false
+        }
+      ]
+    },
+    {
+      "question_id": 2,
+      "question_text": "Рисование на бумаге относится к какой технологии?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "Цифровой",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Традиционной",
+          "correct" :  true
+        },
+        {
+          "answer_id": 3,
+          "text" : "Искусственный интеллект",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "Векторной",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 3,
+      "question_text": "Какие записи относятся к абстрактным, а не к персональным данным?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "petrov220679@mail.ru",
+          "correct" : true
+        },
+        {
+          "answer_id": 2,
+          "text" : "7909-199-29-39 — Петров Иван Семёнович",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "petrov220679@mail.ru — Петров Иван Семёнович",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "Петров Иван Семёнович",
+          "correct" : true
+        }
+      ]
+    },{
+      "question_id": 4,
+      "question_text": "Каким образом можно оставить в тайне сам факт наличия каких-либо скрытых сообщений?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "Используя стеганографию",
+          "correct" : true
+        },
+        {
+          "answer_id": 2,
+          "text" : "Используя криптографию",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Используя аэрографию",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "Используя орфографию",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 5,
+      "question_text": "Какой главный принцип полигонального моделирования?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "Использование простых объектов",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Создание примитов путем лепки",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Редактирование полигонов",
+          "correct" : true
+        },
+        {
+          "answer_id": 4,
+          "text" : "Лепка объектов из сложных фигур",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 6,
+      "question_text": "С чем сравнивают Rig?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "С костью",
+          "correct" : true
+        },
+        {
+          "answer_id": 2,
+          "text" : "С оснасткой",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "С технической системой ",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "С комплексом для движения",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 7,
+      "question_text": "Сколько существует принципов  анимации?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "12",
+          "correct" : true
+        },
+        {
+          "answer_id": 2,
+          "text" : "20",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "1",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "нет такого",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 8,
+      "question_text": "В каком городе находится завод БелАЗ?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "Екатеринбург",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Минск",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Жодино",
+          "correct" : true
+        },
+        {
+          "answer_id": 4,
+          "text" : "Уссурийск",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 9,
+      "question_text": "Какая самая большая грузоподъёмность БелАЗа?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "2500 тонн",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "48 тонн",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "1200 тонн",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "450 тонн",
+          "correct" : true
+        }
+      ]
+    },{
+      "question_id": 10,
+      "question_text": "Какое название команды хакатонщиков из МИСиС существовало? Данный вопрос с подвохом – есть два правильных варианта ответа",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "Боком на КИКе",
+          "correct" : true
+        },
+        {
+          "answer_id": 2,
+          "text" : "АйТишники из МИСИС",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "ML_MISIS_SQUAD",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "Samurai kittens from MISIS",
+          "correct" : true
+        }
+      ]
+    },{
+      "question_id": 11,
+      "question_text": "Какого направления НЕ существует в дизайне?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "Промышленного",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Коммуникационного",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Идеального",
+          "correct" : true
+        },
+        {
+          "answer_id": 4,
+          "text" : "Продуктового",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 12,
+      "question_text": "На каких принтерах печатают в СКБ?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "Flying Beer",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Flying Hair",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Flying Bear",
+          "correct" : true
+        },
+        {
+          "answer_id": 4,
+          "text" : "Flying Pair",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 13,
+      "question_text": "Зачем нужна программа Cura?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "Нарезать деталь на слои и переформатировать деталь в код",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Смотреть процесс печати детали",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Считать необходимое количество пластика",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "Все перечисленное",
+          "correct" : true
+        }
+      ]
+    },{
+      "question_id": 14,
+      "question_text": "Как вы себя сейчас чувствуете?",
+      "answers": [ 
+        {
+          "answer_id": 1,
+          "text" : "Заряжен побеждать и отлично учиться",
+          "correct" : true
+        },
+        {
+          "answer_id": 2,
+          "text" : "Радуюсь тому, что поступил в ИКН",
+          "correct" : true
+        },
+        {
+          "answer_id": 3,
+          "text" : "Осталось очень много вопросов",
+          "correct" : true
+        },
+        {
+          "answer_id": 4,
+          "text" : "Чувствую себя уставшим",
+          "correct" : true
+        }
+      ]
+    }
+  ]
+}
