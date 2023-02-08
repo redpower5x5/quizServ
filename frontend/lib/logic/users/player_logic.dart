@@ -80,6 +80,7 @@ class PlayerLogic implements UserLogic {
                 pointMultiplier);
         socket.emit('answer_data', event);
         print(data['question']['answers'][event]['correct']);
+        print(event);
         isAnswered = true;
         LocalRepository().saveAnswer(event);
 
