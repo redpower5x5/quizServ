@@ -94,7 +94,7 @@ io.on("connection", (socket) => {
   // emit current state
   if (currentState === states.SHOWQUESTION) {
     socket.emit("question", {
-      question: answersStore.getQuestion(qurrentQuestionId), 
+      question: answersStore.getQuestion(qurrentQuestionId),
       timer: timer,
       questionId: qurrentQuestionId,
       totalQuestions: answersStore.getMaxQuestionId(),
@@ -148,7 +148,7 @@ io.on("connection", (socket) => {
     connected: true,
   });
 
-  
+
   // receive answer
   socket.on("answer", (score) => {
     if (answersStore.checkRecentScores(socket.username)) {
@@ -191,7 +191,7 @@ io.on("connection", (socket) => {
       answersStore.resetRecentScores();
       // broadcast question
       socket.broadcast.emit("question", {
-        question: answersStore.getQuestion(qurrentQuestionId), 
+        question: answersStore.getQuestion(qurrentQuestionId),
         timer: timer,
         questionId: qurrentQuestionId,
         totalQuestions: answersStore.getMaxQuestionId(),

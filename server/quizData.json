@@ -2,258 +2,58 @@
   "questions": [
     {
       "question_id": 1,
-      "question_text": "Какого направления НЕ существует в дизайне?",
-      "answers": [ 
+      "question_text": "Какой это заголовок в презентации «Почти 150 человек посетило наше мероприятие»?",
+      "answers": [
         {
           "answer_id": 1,
-          "text" : "Промышленного",
+          "text" : "Назывной",
           "correct" : false
         },
         {
           "answer_id": 2,
-          "text" : "Коммуникационного",
+          "text" : "Числовой",
           "correct" : false
         },
         {
           "answer_id": 3,
-          "text" : "Идеального",
+          "text" : "Смысловой",
           "correct" : true
         },
         {
           "answer_id": 4,
-          "text" : "Продуктового",
+          "text" : "Вводный",
           "correct" : false
         }
       ]
     },{
       "question_id": 2,
-      "question_text": "Что означает глагол to design?",
-      "answers": [ 
+      "question_text": "Сколько цветов хорошо использовать в презентации?",
+      "answers": [
         {
           "answer_id": 1,
-          "text" : "Создавать",
+          "text" : "3",
           "correct" : true
         },
         {
           "answer_id": 2,
-          "text" : "Делать красиво",
+          "text" : "4",
           "correct" : false
         },
         {
           "answer_id": 3,
-          "text" : "Обрабатывать",
+          "text" : "5",
           "correct" : false
         },
         {
           "answer_id": 4,
-          "text" : "Переделывать",
+          "text" : "2",
           "correct" : false
         }
       ]
     },{
       "question_id": 3,
-      "question_text": "Сколько видов дизайна существует?",
-      "answers": [ 
-        {
-          "answer_id": 1,
-          "text" : "Более 20",
-          "correct" : true
-        },
-        {
-          "answer_id": 2,
-          "text" : "Менее 5",
-          "correct" : false
-        },
-        {
-          "answer_id": 3,
-          "text" : "Менее 10",
-          "correct" : false
-        },
-        {
-          "answer_id": 4,
-          "text" : "Более 10",
-          "correct" : false
-        }
-      ]
-    },{
-      "question_id": 4,
-      "question_text": "Какие записи относятся к абстрактным, а не к персональным данным?",
-      "answers": [ 
-        {
-          "answer_id": 1,
-          "text" : "petrov220679@mail.ru",
-          "correct" : true
-        },
-        {
-          "answer_id": 2,
-          "text" : "7909-199-29-39 — Петров Иван Семёнович",
-          "correct" : false
-        },
-        {
-          "answer_id": 3,
-          "text" : "petrov220679@mail.ru — Петров Иван Семёнович",
-          "correct" : false
-        },
-        {
-          "answer_id": 4,
-          "text" : "Петров Иван Семёнович",
-          "correct" : true
-        }
-      ]
-    },{
-      "question_id": 5,
-      "question_text": "Каким образом можно оставить в тайне сам факт наличия каких-либо скрытых сообщений?",
-      "answers": [ 
-        {
-          "answer_id": 1,
-          "text" : "Используя стеганографию",
-          "correct" : true
-        },
-        {
-          "answer_id": 2,
-          "text" : "Используя криптографию",
-          "correct" : false
-        },
-        {
-          "answer_id": 3,
-          "text" : "Используя аэрографию",
-          "correct" : false
-        },
-        {
-          "answer_id": 4,
-          "text" : "Используя орфографию",
-          "correct" : false
-        }
-      ]
-    },{
-      "question_id": 6,
-      "question_text": "Какой главный принцип полигонального моделирования?",
-      "answers": [ 
-        {
-          "answer_id": 1,
-          "text" : "Использование простых объектов",
-          "correct" : false
-        },
-        {
-          "answer_id": 2,
-          "text" : "Создание примитов путем лепки",
-          "correct" : false
-        },
-        {
-          "answer_id": 3,
-          "text" : "Редактирование полигонов",
-          "correct" : true
-        },
-        {
-          "answer_id": 4,
-          "text" : "Лепка объектов из сложных фигур",
-          "correct" : false
-        }
-      ]
-    },{
-      "question_id": 7,
-      "question_text": "С чем сравнивают Rig?",
-      "answers": [ 
-        {
-          "answer_id": 1,
-          "text" : "С костью",
-          "correct" : true
-        },
-        {
-          "answer_id": 2,
-          "text" : "С оснасткой",
-          "correct" : false
-        },
-        {
-          "answer_id": 3,
-          "text" : "С технической системой ",
-          "correct" : false
-        },
-        {
-          "answer_id": 4,
-          "text" : "С комплексом для движения",
-          "correct" : false
-        }
-      ]
-    },{
-      "question_id": 8,
-      "question_text": "Сколько существует принципов  анимации?",
-      "answers": [ 
-        {
-          "answer_id": 1,
-          "text" : "12",
-          "correct" : true
-        },
-        {
-          "answer_id": 2,
-          "text" : "20",
-          "correct" : false
-        },
-        {
-          "answer_id": 3,
-          "text" : "1",
-          "correct" : false
-        },
-        {
-          "answer_id": 4,
-          "text" : "нет такого",
-          "correct" : false
-        }
-      ]
-    },{
-      "question_id": 9,
-      "question_text": "В каком городе находится завод БелАЗ?",
-      "answers": [ 
-        {
-          "answer_id": 1,
-          "text" : "Екатеринбург",
-          "correct" : false
-        },
-        {
-          "answer_id": 2,
-          "text" : "Минск",
-          "correct" : false
-        },
-        {
-          "answer_id": 3,
-          "text" : "Жодино",
-          "correct" : true
-        },
-        {
-          "answer_id": 4,
-          "text" : "Уссурийск",
-          "correct" : false
-        }
-      ]
-    },{
-      "question_id": 10,
-      "question_text": "Какая самая большая грузоподъёмность БелАЗа?",
-      "answers": [ 
-        {
-          "answer_id": 1,
-          "text" : "2500 тонн",
-          "correct" : false
-        },
-        {
-          "answer_id": 2,
-          "text" : "48 тонн",
-          "correct" : false
-        },
-        {
-          "answer_id": 3,
-          "text" : "1200 тонн",
-          "correct" : false
-        },
-        {
-          "answer_id": 4,
-          "text" : "450 тонн",
-          "correct" : true
-        }
-      ]
-    },{
-      "question_id": 11,
       "question_text": "Какое название команды хакатонщиков из МИСиС существовало? Данный вопрос с подвохом – есть два правильных варианта ответа",
-      "answers": [ 
+      "answers": [
         {
           "answer_id": 1,
           "text" : "Боком на КИКе",
@@ -276,9 +76,159 @@
         }
       ]
     },{
-      "question_id": 12,
+      "question_id": 4,
+      "question_text": "Как называется телеграмм-бот, в котором можно получить API токен?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "BotFather",
+          "correct" : true
+        },
+        {
+          "answer_id": 2,
+          "text" : "BotCreater",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "TelegramFather",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "DurovBot",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 5,
+      "question_text": "Как называется самый простой бот, который встречается чаще всего?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "BroBot (на любое сообщение отвечает bro)",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "HelloBot (на любое сообщение отвечает hello)",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "KittyBot (на любое сообщение отвечает мяу)",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "EchoBot (на любое сообщение отвечает этим же сообщением)",
+          "correct" : true
+        }
+      ]
+    },{
+      "question_id": 6,
+      "question_text": "Укажите ключевые виды моделирования по их принципу работы",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Высокополигональное",
+          "correct" : true
+        },
+        {
+          "answer_id": 2,
+          "text" : "3Д-скульптинг",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Сплайновое",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "Низкополигональное",
+          "correct" : true
+        }
+      ]
+    },{
+      "question_id": 7,
+      "question_text": "К САПРам относятся:",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "3Ds Max",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Компас 3Д",
+          "correct" : true
+        },
+        {
+          "answer_id": 3,
+          "text" : "Blender",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "AutoCAD",
+          "correct" : true
+        }
+      ]
+    },{
+      "question_id": 8,
+      "question_text": "В каком городе находится завод БелАЗ?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Екатеринбург",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Минск",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Жодино",
+          "correct" : true
+        },
+        {
+          "answer_id": 4,
+          "text" : "Уссурийск",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 9,
+      "question_text": "Какая самая большая грузоподъёмность БелАЗа?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "2500 тонн",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "48 тонн",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "1200 тонн",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "450 тонн",
+          "correct" : true
+        }
+      ]
+    },{
+      "question_id": 10,
       "question_text": "На каких принтерах печатают в СКБ?",
-      "answers": [ 
+      "answers": [
         {
           "answer_id": 1,
           "text" : "Flying Beer",
@@ -301,9 +251,9 @@
         }
       ]
     },{
-      "question_id": 13,
+      "question_id": 11,
       "question_text": "Зачем нужна программа Cura?",
-      "answers": [ 
+      "answers": [
         {
           "answer_id": 1,
           "text" : "Нарезать деталь на слои и переформатировать деталь в код",
@@ -326,9 +276,84 @@
         }
       ]
     },{
+      "question_id": 12,
+      "question_text": "Что делать если сетка плохо обучилась?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Больше данных!",
+          "correct" : true
+        },
+        {
+          "answer_id": 2,
+          "text" : "Больше эпох!",
+          "correct" : true
+        },
+        {
+          "answer_id": 3,
+          "text" : "Больше слоев!",
+          "correct" : true
+        },
+        {
+          "answer_id": 4,
+          "text" : "Использовать катбуст!",
+          "correct" : true
+        }
+      ]
+    },{
+      "question_id": 13,
+      "question_text": "Какая программа с GUI позволяет отпралять запросы на API эндпоинты?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Kaspersky Endpoint Security",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Insomnia",
+          "correct" : true
+        },
+        {
+          "answer_id": 3,
+          "text" : "Postman",
+          "correct" : true
+        },
+        {
+          "answer_id": 4,
+          "text" : "Curl",
+          "correct" : false
+        }
+      ]
+    },{
       "question_id": 14,
+      "question_text": "Что помогает сетевым инженерам обеспечить безопасность внутренних сетей?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Jira",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Cisco CCNA",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Радужные таблицы",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "VLAN",
+          "correct" : true
+        }
+      ]
+    },{
+      "question_id": 15,
       "question_text": "Как вы себя сейчас чувствуете?",
-      "answers": [ 
+      "answers": [
         {
           "answer_id": 1,
           "text" : "Заряжен побеждать и отлично учиться",
