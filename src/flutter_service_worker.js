@@ -17,7 +17,7 @@ const RESOURCES = {
 "android-chrome-256x256.png": "95fe8776147c2062e704e426c02d37fe",
 "main.dart.js_4.part.js": "1089869c6a281e4e510eb413f86911ed",
 "mstile-70x70.png": "4d049d37ee8825042f9a075954950069",
-"main.dart.js": "86c3543750d2a575bcf8be6f87295afe",
+"main.dart.js": "889875d61a7cf57072ff731016536cbb",
 "flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
 "main.dart.js_5.part.js": "746ce79ff2a5877d2be16a973b85c490",
 "mstile-310x150.png": "bb0830f1f816bfac379e830a2f8d3aea",

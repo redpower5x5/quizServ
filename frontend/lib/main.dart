@@ -10,7 +10,7 @@ import 'package:quiz_app/ui/play_page/play_page_deffered.dart';
 import 'package:quiz_app/ui/result_page/result_page_deffered.dart';
 
 void main() {
-  print('Quolly v 0.9.7');
+  print('Quolly v 0.9.8.3');
   runApp(MyApp());
 }
 
@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
         create: (_) => ThemeManager(),
         builder: (_, __) => Consumer<ThemeManager>(
               builder: (_, themeManager, __) => MaterialApp(
-                title: 'Quolly',
+                title: 'VK&Quolly',
                 theme: ThemeData(
                     primarySwatch: themeManager.currentTheme.accentColor
                         .generateMaterial(),

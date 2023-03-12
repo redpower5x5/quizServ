@@ -16173,7 +16173,7 @@ _.c=c
 _.d=d
 _.e=e},
 a8a:function a8a(){},
-ap6(){A.dM("Quolly v 0.9.7")
+ap6(){A.dM("Quolly v 0.9.8.3")
 if($.I==null)A.awX()
 var s=$.I
 s.NH(new A.wA(null))
@@ -50993,7 +50993,7 @@ a6n(a,b,c,d){var s,r=t.z,q=A.A(t.N,r)
 q.l(0,"transports",A.a(["websocket"],t.s))
 q.l(0,"autoConnect",!1)
 q.l(0,"auth",A.ad(["sessionID",a],r,r))
-s=A.aoc("https://quizapi.onixx.org",q)
+s=A.aoc("https://vk-quizapi.onixx.org",q)
 s.bb(0,"session",new A.WZ(b))
 s.bb(0,"message",new A.X_(c))
 s.bb(0,"admin",new A.X0(d))
@@ -51003,7 +51003,7 @@ a6m(a,b,c,d){var s,r=t.z,q=A.A(t.N,r)
 q.l(0,"transports",A.a(["websocket"],t.s))
 q.l(0,"autoConnect",!1)
 q.l(0,"auth",A.ad(["username",a],r,r))
-s=A.aoc("https://quizapi.onixx.org",q)
+s=A.aoc("https://vk-quizapi.onixx.org",q)
 s.bb(0,"session",new A.WW(b))
 s.bb(0,"message",new A.WX(c))
 s.bb(0,"admin",new A.WY(d))
@@ -51569,7 +51569,7 @@ A.ac5.prototype={
 $3(a,b,c){var s=null,r=A.ad([50,A.QL(B.x,0.9),100,A.QL(B.x,0.8),200,A.QL(B.x,0.6),300,A.QL(B.x,0.4),400,A.QL(B.x,0.2),500,B.x,600,A.afA(B.x,0.1),700,A.afA(B.x,0.2),800,A.afA(B.x,0.3),900,A.afA(B.x,0.4)],t.S,t.iO),q=A.a7J(s,s,s,s,s,s,A.el(s,s,B.x,s,s,s,s,s,s,s,s,36,s,s,B.c2,s,s,!0,s,s,s,s,s,s,s,s),A.el(s,s,B.x,s,s,s,s,s,s,s,s,21,s,s,B.ag,s,s,!0,s,s,s,s,s,s,s,s),A.el(s,s,B.x,s,s,s,s,s,s,s,s,21,s,s,B.c2,s,s,!0,s,s,s,s,s,s,s,s),A.el(s,s,B.dF,s,s,s,s,s,s,s,s,17,s,s,B.c2,s,s,!0,s,s,s,s,s,s,s,s),A.el(s,s,B.x,s,s,s,s,s,s,s,s,24,s,s,B.bg,s,s,!0,s,s,s,s,s,s,s,s),A.el(s,s,B.x,s,s,s,s,s,s,s,s,24,s,s,B.bg,s,s,!0,s,s,s,s,s,s,s,s),s,s,s,s,s,s,A.el(s,s,B.x,s,s,s,s,s,s,s,s,14,s,s,B.ag,s,s,!0,s,s,s,s,s,s,s,s),A.el(s,s,B.x,s,s,s,s,s,s,s,s,15,s,s,B.c2,s,s,!0,s,s,s,s,s,s,s,s),s,s,s),p=A.fM(15),o=A.fM(16)
 q=A.amK(B.j,s,"VK",new A.vI(A.el(s,s,B.x,s,s,s,s,s,s,s,s,21,s,s,B.ag,s,s,!0,s,s,s,s,s,s,s,s),new A.h4(4,o,new A.dQ(B.x,2.2,B.aV,B.ai)),new A.h4(4,p,new A.dQ(B.x,2.2,B.aV,B.ai))),new A.qB(r,4278455061),q,s)
 r=this.a
-return new A.nz(A.ad(["/login",new A.ac2(r),"/play",new A.ac3(r),"/result",new A.ac4(r)],t.N,t.hw),"/login","Quolly",q,s)},
+return new A.nz(A.ad(["/login",new A.ac2(r),"/play",new A.ac3(r),"/result",new A.ac4(r)],t.N,t.hw),"/login","VK&Quolly",q,s)},
 $C:"$3",
 $R:3,
 $S:300}

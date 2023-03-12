@@ -1,11 +1,11 @@
 .DS_Store
 node_modules
 /dist
-/frontend/.dart_tool
+frontend/.dart_tool
 *.dill*
-/frontend/.packages
-/frontend/.pub-cache
-/frontend/build
+frontend/.packages
+frontend/.pub-cache
+frontend/build
 
 
 # local env files
@@ -28,3 +28,4 @@ pnpm-debug.log*
 *.sw?
 package-lock.json
 *.flutter-plugins-dependencies
+

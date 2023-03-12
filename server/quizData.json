@@ -1,381 +1,355 @@
 {
-    "questions": [
-      {
-        "question_id": 1,
-        "question_text": "В каком году возник КВН?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "1990",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "1961",
-            "correct" : true
-          },
-          {
-            "answer_id": 3,
-            "text" : "2000",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "1930",
-            "correct" : false
-          }
-        ]
-      },
-      {
-        "question_id": 2,
-        "question_text": "В каком году появилась социальная сеть ВКонтакте?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "2005",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "2006",
-            "correct" :  true
-          },
-          {
-            "answer_id": 3,
-            "text" : "2007",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "2008",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 3,
-        "question_text": "Какая высота самого высокого здания в мире?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "100",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "750",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "828",
-            "correct" : true
-          },
-          {
-            "answer_id": 4,
-            "text" : "832",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 4,
-        "question_text": "Что из перечисленного является сервисом компании VK?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Каршеринг «Делимобиль»",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "Интернет-аптека «ЕАптека»",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Интернет-магазин «Lamoda»",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "Онлайн-магазин с доставкой «Самокат»",
-            "correct" : true
-          }
-        ]
-      },{
-        "question_id": 5,
-        "question_text": "В каком городе России есть метро?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Самара",
-            "correct" : true
-          },
-          {
-            "answer_id": 2,
-            "text" : "Пенза",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Калининград",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "Нижний Тагил ",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 6,
-        "question_text": "Как зовут голосового помощника умной колонки VK Капсулы?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Маруся",
-            "correct" : true
-          },
-          {
-            "answer_id": 2,
-            "text" : "Алиса",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Зина",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "Сюзанна",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 7,
-        "question_text": "Как назывался древний материк на планете Земля?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Пангея",
-            "correct" : true
-          },
-          {
-            "answer_id": 2,
-            "text" : "Росшит",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Анталатида",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "Интерра",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 8,
-        "question_text": "Как называется ежегодный музыкально-развлекательный фестиваль VK?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "VK Sunset",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "VK Fest",
-            "correct" : true
-          },
-          {
-            "answer_id": 3,
-            "text" : "VK Fast",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "VK Club",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 9,
-        "question_text": "Что добавляют в щи по старым русским рецептам?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Репа",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "Картофель",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Мед",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "Простокваша",
-            "correct" : true
-          }
-        ]
-      },{
-        "question_id": 10,
-        "question_text": "Как называется платёжная система ВКонтакте?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "VK Pay",
-            "correct" : true
-          },
-          {
-            "answer_id": 2,
-            "text" : "VK Money",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "VK Check",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "VK Click",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 11,
-        "question_text": "Скульптура «Медный всадник» посвящена …",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "А.С. Пушкину",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "Николаю II",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Петру Великому",
-            "correct" : true
-          },
-          {
-            "answer_id": 4,
-            "text" : "Русскому воину",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 12,
-        "question_text": "Какая образовательная онлайн-платформа принадлежит VK?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "SkillBox",
-            "correct" : true
-          },
-          {
-            "answer_id": 2,
-            "text" : "SkillBrain",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "SkillBill",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "Skill VK",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 13,
-        "question_text": "Что получают бобры в результате строительства?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Плотину",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "Дом",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Беседку",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "Хатку",
-            "correct" : true
-          }
-        ]
-      },{
-        "question_id": 14,
-        "question_text": "Какое число является чертовой дюжиной?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "11",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "13",
-            "correct" : true
-          },
-          {
-            "answer_id": 3,
-            "text" : "14",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "666",
-            "correct" : false
-          }
-        ]
-      },{
-        "question_id": 15,
-        "question_text": "Именно этих животных держат в кошарах. Каких?",
-        "answers": [ 
-          {
-            "answer_id": 1,
-            "text" : "Свиней",
-            "correct" : false
-          },
-          {
-            "answer_id": 2,
-            "text" : "Коров",
-            "correct" : false
-          },
-          {
-            "answer_id": 3,
-            "text" : "Волков",
-            "correct" : false
-          },
-          {
-            "answer_id": 4,
-            "text" : "Овец",
-            "correct" : true
-          }
-        ]
-      }
-    ]
-  }
+  "questions": [
+    {
+      "question_id": 1,
+      "question_text": "Как называется строка под именем и фамилией на странице профиля ВКонтакте?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Статус",
+          "correct" : true
+        },
+        {
+          "answer_id": 2,
+          "text" : "Примечание",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Описание",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "Новость",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 2,
+      "question_text": "Как называется платежная система VK?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "VK Money",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "VK Pay",
+          "correct" : true
+        },
+        {
+          "answer_id": 3,
+          "text" : "VK Рубль",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "VK Сheck",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 3,
+      "question_text": "Что должно быть на обложке сообщества ВКонтакте?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Орнамент для красоты",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Фотографии",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Миссия, Лозунг и УТП",
+          "correct" : true
+        },
+        {
+          "answer_id": 4,
+          "text" : "Подробное описание организации",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 4,
+      "question_text": "Как называется самый крупный музыкально-развлекательный фестиваль VK?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "VK PARTY",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "VK FEST",
+          "correct" : true
+        },
+        {
+          "answer_id": 3,
+          "text" : "VK CLUB",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "VK TURBO",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 5,
+      "question_text": "Как зовут умного голосового помощника от VK?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Марина",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Сири",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Маруся",
+          "correct" : true
+        },
+        {
+          "answer_id": 4,
+          "text" : "Алиса",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 6,
+      "question_text": "Как называется хранилище данных от Mail.ru?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Агрегатор",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Облако",
+          "correct" : true
+        },
+        {
+          "answer_id": 3,
+          "text" : "Диск",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "База",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 7,
+      "question_text": "Какую функцию выполняет Меню в сообществе ВКонтакте?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Меню неважно, мы же не в ресторане!",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Показ фотографий и видео",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Меню дает ссылки на сайт организации и другие соцсети",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "Меню – это основной навигатор сообщества",
+          "correct" : true
+        }
+      ]
+    },{
+      "question_id": 8,
+      "question_text": "Как называется платформа видеоконференций от VK?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "VK Телефония",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "VK Звонки",
+          "correct" : true
+        },
+        {
+          "answer_id": 3,
+          "text" : "VK Связь",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "VK Гудок",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 9,
+      "question_text": "Каким символом обозначается верификация сообщества?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Галочка",
+          "correct" : true
+        },
+        {
+          "answer_id": 2,
+          "text" : "Две галочки",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Звездочка",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "Плюсик",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 10,
+      "question_text": "Как называется образовательная платформа VK?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Ucheba",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Skillbox",
+          "correct" : true
+        },
+        {
+          "answer_id": 3,
+          "text" : "Education",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "VK Класс",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 11,
+      "question_text": "Что такое эффективный закреп в сообществе ВКонтакте?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Прикреплённые фотографии",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Пост-визитка с приветствием, знакомством и описанием миссии компании",
+          "correct" : true
+        },
+        {
+          "answer_id": 3,
+          "text" : "Интерактив для подписчиков: квест или тест",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "Пост с адресом организации и контактными данными",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 12,
+      "question_text": "Какие соцсети входят в экосистему VK? Выберите правильный перечень",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "ВКонтакте, Телеграм, Мой Мир",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "ВКонтакте, Одноклассники, Россграм",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "ВКонтакте, Одноклассники, Мой Мир",
+          "correct" : true
+        },
+        {
+          "answer_id": 4,
+          "text" : "ВКонтакте, Viber, Мой Мир",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 13,
+      "question_text": "Как называется рекомендательная система от VK, которая предлагает пользователям контент с учётом их интересов?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Темп",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Пульс",
+          "correct" : true
+        },
+        {
+          "answer_id": 3,
+          "text" : "Ритм",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "Бит",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 14,
+      "question_text": "Какой продукт / сервис НЕ входит в экосистему VK?",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Дзен",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "GeekBrains",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Юла",
+          "correct" : false
+        },
+        {
+          "answer_id": 4,
+          "text" : "Ситимобил",
+          "correct" : true
+        }
+      ]
+    }
+  ]
+}

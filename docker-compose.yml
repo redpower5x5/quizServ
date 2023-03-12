@@ -2,16 +2,16 @@ version: '3'
 
 services:
   node:
-    build: 
+    build:
       context: .
       dockerfile: dockerfile-nodejs
     ports:
-      - "8765:8765"
+      - "8777:8765"
     restart: always
   ngnix:
     image: nginx:stable
     ports:
-      - "2121:80"
+      - "2277:80"
     restart: always
     volumes:
       - ./src:/usr/share/nginx/html

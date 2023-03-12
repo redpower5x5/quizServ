@@ -1,7 +1,3 @@
-quiz_app
-2.18
-file:///Users/aionixx/Documents/socket-quiz/frontend/
-file:///Users/aionixx/Documents/socket-quiz/frontend/lib/
 async
 2.14
 file:///Users/aionixx/development/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/
@@ -254,4 +250,8 @@ flutter_web_plugins
 2.17
 file:///Users/aionixx/development/flutter/packages/flutter_web_plugins/
 file:///Users/aionixx/development/flutter/packages/flutter_web_plugins/lib/
+quiz_app
+2.18
+file:///Users/aionixx/development/vk_quiz/quizServ/frontend/
+file:///Users/aionixx/development/vk_quiz/quizServ/frontend/lib/
 2
