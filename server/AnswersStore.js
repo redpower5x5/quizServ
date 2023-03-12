@@ -84,7 +84,6 @@ class InMemoryAnswersStore extends AnswersStore {
                 scores.set(userID, { recent: 0, total: score });
             }
         }
-        
         return Object.fromEntries(scores);
     }
 

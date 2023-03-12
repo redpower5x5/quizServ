@@ -26,7 +26,7 @@ let currentState = states.WAITIGUSERS;
 
 let qurrentQuestionId = 1;
 
-const initialTimer = 42.0;
+const initialTimer = 37.0;
 
 let timer = initialTimer;
 
@@ -94,7 +94,7 @@ io.on("connection", (socket) => {
   // emit current state
   if (currentState === states.SHOWQUESTION) {
     socket.emit("question", {
-      question: answersStore.getQuestion(qurrentQuestionId), 
+      question: answersStore.getQuestion(qurrentQuestionId),
       timer: timer,
       questionId: qurrentQuestionId,
       totalQuestions: answersStore.getMaxQuestionId(),
