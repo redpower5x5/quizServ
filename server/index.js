@@ -26,7 +26,7 @@ let currentState = states.WAITIGUSERS;
 
 let qurrentQuestionId = 1;
 
-const initialTimer = 37.0;
+const initialTimer = 22.0;
 
 let timer = initialTimer;
 
