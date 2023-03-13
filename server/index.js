@@ -180,6 +180,7 @@ io.on("connection", (socket) => {
         if(countDown !== null) {
           clearInterval(countDown);
           countDown = null;
+          timer = initialTimer
         }
       }
       // reset local scores
