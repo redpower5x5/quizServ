@@ -2,51 +2,51 @@
   "questions": [
     {
       "question_id": 1,
-      "question_text": "Какой это заголовок в презентации «Почти 150 человек посетило наше мероприятие»?",
+      "question_text": "Кто создал fusion brain?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "Назывной",
+          "text" : "Яндкес",
           "correct" : false
         },
         {
           "answer_id": 2,
-          "text" : "Числовой",
+          "text" : "Гена",
           "correct" : false
         },
         {
           "answer_id": 3,
-          "text" : "Смысловой",
+          "text" : "Сбер",
           "correct" : true
         },
         {
           "answer_id": 4,
-          "text" : "Вводный",
+          "text" : "Open AI",
           "correct" : false
         }
       ]
     },{
       "question_id": 2,
-      "question_text": "Сколько цветов хорошо использовать в презентации?",
+      "question_text": "Сколько всего инструментов есть во fusion brain?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "3",
-          "correct" : true
-        },
-        {
-          "answer_id": 2,
-          "text" : "4",
+          "text" : "7",
           "correct" : false
         },
         {
+          "answer_id": 2,
+          "text" : "9",
+          "correct" : true
+        },
+        {
           "answer_id": 3,
-          "text" : "5",
+          "text" : "3",
           "correct" : false
         },
         {
           "answer_id": 4,
-          "text" : "2",
+          "text" : "5",
           "correct" : false
         }
       ]
@@ -127,106 +127,56 @@
       ]
     },{
       "question_id": 6,
-      "question_text": "Укажите ключевые виды моделирования по их принципу работы",
+      "question_text": "Какого этапа в дизайн мышлении нет?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "Высокополигональное",
-          "correct" : true
+          "text" : "Тестирования",
+          "correct" : false
         },
         {
           "answer_id": 2,
-          "text" : "3Д-скульптинг",
+          "text" : "Генерации идей",
           "correct" : false
         },
         {
           "answer_id": 3,
-          "text" : "Сплайновое",
+          "text" : "Фокусировки",
           "correct" : false
         },
         {
           "answer_id": 4,
-          "text" : "Низкополигональное",
+          "text" : "Рефлексии",
           "correct" : true
         }
       ]
     },{
       "question_id": 7,
-      "question_text": "К САПРам относятся:",
+      "question_text": "Какая сейчас происходит промышленная революция?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "3Ds Max",
+          "text" : "Третья",
           "correct" : false
         },
         {
           "answer_id": 2,
-          "text" : "Компас 3Д",
-          "correct" : true
-        },
-        {
-          "answer_id": 3,
-          "text" : "Blender",
+          "text" : "Пятая",
           "correct" : false
         },
         {
-          "answer_id": 4,
-          "text" : "AutoCAD",
+          "answer_id": 3,
+          "text" : "Четвертая",
           "correct" : true
+        },
+        {
+          "answer_id": 4,
+          "text" : "Нет номера",
+          "correct" : false
         }
       ]
     },{
       "question_id": 8,
-      "question_text": "В каком городе находится завод БелАЗ?",
-      "answers": [
-        {
-          "answer_id": 1,
-          "text" : "Екатеринбург",
-          "correct" : false
-        },
-        {
-          "answer_id": 2,
-          "text" : "Минск",
-          "correct" : false
-        },
-        {
-          "answer_id": 3,
-          "text" : "Жодино",
-          "correct" : true
-        },
-        {
-          "answer_id": 4,
-          "text" : "Уссурийск",
-          "correct" : false
-        }
-      ]
-    },{
-      "question_id": 9,
-      "question_text": "Какая самая большая грузоподъёмность БелАЗа?",
-      "answers": [
-        {
-          "answer_id": 1,
-          "text" : "2500 тонн",
-          "correct" : false
-        },
-        {
-          "answer_id": 2,
-          "text" : "48 тонн",
-          "correct" : false
-        },
-        {
-          "answer_id": 3,
-          "text" : "1200 тонн",
-          "correct" : false
-        },
-        {
-          "answer_id": 4,
-          "text" : "450 тонн",
-          "correct" : true
-        }
-      ]
-    },{
-      "question_id": 10,
       "question_text": "На каких принтерах печатают в СКБ?",
       "answers": [
         {
@@ -251,7 +201,7 @@
         }
       ]
     },{
-      "question_id": 11,
+      "question_id": 9,
       "question_text": "Зачем нужна программа Cura?",
       "answers": [
         {
@@ -276,7 +226,7 @@
         }
       ]
     },{
-      "question_id": 12,
+      "question_id": 10,
       "question_text": "Что делать если сетка плохо обучилась?",
       "answers": [
         {
@@ -301,7 +251,32 @@
         }
       ]
     },{
-      "question_id": 13,
+      "question_id": 11,
+      "question_text": "Лучшая вайфу Евангелиона",
+      "answers": [
+        {
+          "answer_id": 1,
+          "text" : "Аска",
+          "correct" : false
+        },
+        {
+          "answer_id": 2,
+          "text" : "Рей",
+          "correct" : false
+        },
+        {
+          "answer_id": 3,
+          "text" : "Мисато",
+          "correct" : true
+        },
+        {
+          "answer_id": 4,
+          "text" : "Синдзи",
+          "correct" : false
+        }
+      ]
+    },{
+      "question_id": 12,
       "question_text": "Какая программа с GUI позволяет отпралять запросы на API эндпоинты?",
       "answers": [
         {
@@ -326,7 +301,7 @@
         }
       ]
     },{
-      "question_id": 14,
+      "question_id": 13,
       "question_text": "Что помогает сетевым инженерам обеспечить безопасность внутренних сетей?",
       "answers": [
         {
@@ -351,7 +326,7 @@
         }
       ]
     },{
-      "question_id": 15,
+      "question_id": 14,
       "question_text": "Как вы себя сейчас чувствуете?",
       "answers": [
         {
