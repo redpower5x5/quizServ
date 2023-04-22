@@ -2,352 +2,302 @@
   "questions": [
     {
       "question_id": 1,
-      "question_text": "Кто создал fusion brain?",
+      "question_text": "Какого языка программирования не существует?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "Яндкес",
+          "text" : "LOLCODE",
           "correct" : false
         },
         {
           "answer_id": 2,
-          "text" : "Гена",
+          "text" : "Brainfuck",
           "correct" : false
         },
         {
           "answer_id": 3,
-          "text" : "Сбер",
-          "correct" : true
+          "text" : "Chicken",
+          "correct" : false
         },
         {
           "answer_id": 4,
-          "text" : "Open AI",
-          "correct" : false
+          "text" : "BruhLang",
+          "correct" : true
         }
       ]
     },{
       "question_id": 2,
-      "question_text": "Сколько всего инструментов есть во fusion brain?",
+      "question_text": "Как называется язык таблицы стилей?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "7",
+          "text" : "HTML",
           "correct" : false
         },
         {
           "answer_id": 2,
-          "text" : "9",
+          "text" : "CSS",
           "correct" : true
         },
         {
           "answer_id": 3,
-          "text" : "3",
+          "text" : "JSON",
           "correct" : false
         },
         {
           "answer_id": 4,
-          "text" : "5",
+          "text" : "XML",
           "correct" : false
         }
       ]
     },{
       "question_id": 3,
-      "question_text": "Какое название команды хакатонщиков из МИСиС существовало? Данный вопрос с подвохом – есть два правильных варианта ответа",
+      "question_text": "Каков суммарный объем выигрышей участников Хакатон-клуба за 2 года?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "Боком на КИКе",
+          "text" : "4 000 000 р",
           "correct" : true
         },
         {
           "answer_id": 2,
-          "text" : "АйТишники из МИСИС",
+          "text" : "730 000 р",
           "correct" : false
         },
         {
           "answer_id": 3,
-          "text" : "ML_MISIS_SQUAD",
+          "text" : "1 800 000 р",
           "correct" : false
         },
         {
           "answer_id": 4,
-          "text" : "Samurai kittens from MISIS",
-          "correct" : true
+          "text" : "255 000 р",
+          "correct" : false
         }
       ]
     },{
       "question_id": 4,
-      "question_text": "Как называется телеграмм-бот, в котором можно получить API токен?",
+      "question_text": "Какая студия провела ребрендинг мисис?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "BotFather",
-          "correct" : true
-        },
-        {
-          "answer_id": 2,
-          "text" : "BotCreater",
+          "text" : "Студия Артемия Лебедева",
           "correct" : false
         },
         {
+          "answer_id": 2,
+          "text" : "DDVB",
+          "correct" : true
+        },
+        {
           "answer_id": 3,
-          "text" : "TelegramFather",
+          "text" : "Логомашина",
           "correct" : false
         },
         {
           "answer_id": 4,
-          "text" : "DurovBot",
+          "text" : "AGIMA",
           "correct" : false
         }
       ]
     },{
       "question_id": 5,
-      "question_text": "Как называется самый простой бот, который встречается чаще всего?",
+      "question_text": "Какого типа шрифта не существует?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "BroBot (на любое сообщение отвечает bro)",
+          "text" : "Антиква",
           "correct" : false
         },
         {
           "answer_id": 2,
-          "text" : "HelloBot (на любое сообщение отвечает hello)",
+          "text" : "Гротеск",
           "correct" : false
         },
         {
           "answer_id": 3,
-          "text" : "KittyBot (на любое сообщение отвечает мяу)",
+          "text" : "Рукописный",
           "correct" : false
         },
         {
           "answer_id": 4,
-          "text" : "EchoBot (на любое сообщение отвечает этим же сообщением)",
+          "text" : "Комичный",
           "correct" : true
         }
       ]
     },{
       "question_id": 6,
-      "question_text": "Какого этапа в дизайн мышлении нет?",
+      "question_text": "Что такое интерлиньяж?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "Тестирования",
+          "text" : "Межстрочный интервал",
           "correct" : false
         },
         {
           "answer_id": 2,
-          "text" : "Генерации идей",
-          "correct" : false
+          "text" : "Расстояние между базовыми линиями",
+          "correct" : true
         },
         {
           "answer_id": 3,
-          "text" : "Фокусировки",
+          "text" : "Высота линии",
           "correct" : false
         },
         {
           "answer_id": 4,
-          "text" : "Рефлексии",
-          "correct" : true
+          "text" : "Неоднородный шрифт",
+          "correct" : false
         }
       ]
     },{
       "question_id": 7,
-      "question_text": "Какая сейчас происходит промышленная революция?",
+      "question_text": "Какая студия разработала roguelike-игру Hades?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "Третья",
+          "text" : "Blizzard Entertainment",
           "correct" : false
         },
         {
           "answer_id": 2,
-          "text" : "Пятая",
+          "text" : "Bungie",
           "correct" : false
         },
         {
           "answer_id": 3,
-          "text" : "Четвертая",
+          "text" : "Supergiant Games",
           "correct" : true
         },
         {
           "answer_id": 4,
-          "text" : "Нет номера",
+          "text" : "Electronic Arts",
           "correct" : false
         }
       ]
     },{
       "question_id": 8,
-      "question_text": "На каких принтерах печатают в СКБ?",
+      "question_text": "Назовите самого известного геймдизайнера современности:",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "Flying Beer",
+          "text" : "Крис Авеллон",
           "correct" : false
         },
         {
           "answer_id": 2,
-          "text" : "Flying Hair",
-          "correct" : false
-        },
-        {
-          "answer_id": 3,
-          "text" : "Flying Bear",
+          "text" : "Хидэо Кодзима",
           "correct" : true
         },
         {
+          "answer_id": 3,
+          "text" : "IceFrog",
+          "correct" : false
+        },
+        {
           "answer_id": 4,
-          "text" : "Flying Pair",
+          "text" : "Грэй Ричард",
           "correct" : false
         }
       ]
     },{
       "question_id": 9,
-      "question_text": "Зачем нужна программа Cura?",
+      "question_text": "Какой герой принадлежит вселенной Overwatch?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "Нарезать деталь на слои и переформатировать деталь в код",
-          "correct" : false
+          "text" : "Трейсер",
+          "correct" : true
         },
         {
           "answer_id": 2,
-          "text" : "Смотреть процесс печати детали",
+          "text" : "Марси",
           "correct" : false
         },
         {
           "answer_id": 3,
-          "text" : "Считать необходимое количество пластика",
+          "text" : "Сильвана",
           "correct" : false
         },
         {
           "answer_id": 4,
-          "text" : "Все перечисленное",
-          "correct" : true
+          "text" : "Джесси",
+          "correct" : false
         }
       ]
     },{
       "question_id": 10,
-      "question_text": "Что делать если сетка плохо обучилась?",
+      "question_text": "Какая операционная система чаще остальных используется на серверах?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "Больше данных!",
-          "correct" : true
+          "text" : "Microsoft Windows",
+          "correct" : false
         },
         {
           "answer_id": 2,
-          "text" : "Больше эпох!",
-          "correct" : true
+          "text" : "MacOS",
+          "correct" : false
         },
         {
           "answer_id": 3,
-          "text" : "Больше слоев!",
-          "correct" : true
+          "text" : "Android",
+          "correct" : false
         },
         {
           "answer_id": 4,
-          "text" : "Использовать катбуст!",
+          "text" : "GNU/Linux",
           "correct" : true
         }
       ]
     },{
       "question_id": 11,
-      "question_text": "Лучшая вайфу Евангелиона",
+      "question_text": "Как называют программные средства фильтрации сетевого трафика?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "Аска",
-          "correct" : false
+          "text" : "Firewall",
+          "correct" : true
         },
         {
           "answer_id": 2,
-          "text" : "Рей",
+          "text" : "Антивирус",
           "correct" : false
         },
         {
           "answer_id": 3,
-          "text" : "Мисато",
-          "correct" : true
+          "text" : "Dr.Web Pro Plus Super",
+          "correct" : false
         },
         {
           "answer_id": 4,
-          "text" : "Синдзи",
+          "text" : "Yandex Plus",
           "correct" : false
         }
       ]
     },{
       "question_id": 12,
-      "question_text": "Какая программа с GUI позволяет отпралять запросы на API эндпоинты?",
+      "question_text": "Расшифровка последней буквы в HTTPS?",
       "answers": [
         {
           "answer_id": 1,
-          "text" : "Kaspersky Endpoint Security",
-          "correct" : false
-        },
-        {
-          "answer_id": 2,
-          "text" : "Insomnia",
-          "correct" : true
-        },
-        {
-          "answer_id": 3,
-          "text" : "Postman",
-          "correct" : true
-        },
-        {
-          "answer_id": 4,
-          "text" : "Curl",
-          "correct" : false
-        }
-      ]
-    },{
-      "question_id": 13,
-      "question_text": "Что помогает сетевым инженерам обеспечить безопасность внутренних сетей?",
-      "answers": [
-        {
-          "answer_id": 1,
-          "text" : "Jira",
-          "correct" : false
-        },
-        {
-          "answer_id": 2,
-          "text" : "Cisco CCNA",
-          "correct" : false
-        },
-        {
-          "answer_id": 3,
-          "text" : "Радужные таблицы",
-          "correct" : false
-        },
-        {
-          "answer_id": 4,
-          "text" : "VLAN",
-          "correct" : true
-        }
-      ]
-    },{
-      "question_id": 14,
-      "question_text": "Как вы себя сейчас чувствуете?",
-      "answers": [
-        {
-          "answer_id": 1,
-          "text" : "Заряжен побеждать и отлично учиться",
+          "text" : "Secure",
           "correct" : true
         },
         {
           "answer_id": 2,
-          "text" : "Радуюсь тому, что поступил в ИКН",
-          "correct" : true
+          "text" : "Server",
+          "correct" : false
         },
         {
           "answer_id": 3,
-          "text" : "Осталось очень много вопросов",
-          "correct" : true
+          "text" : "Soft",
+          "correct" : false
         },
         {
           "answer_id": 4,
-          "text" : "Чувствую себя уставшим",
-          "correct" : true
+          "text" : "Selenium",
+          "correct" : false
         }
       ]
     }
