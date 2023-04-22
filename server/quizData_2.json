@@ -1,0 +1,305 @@
+{
+    "questions": [
+      {
+        "question_id": 1,
+        "question_text": "Руководство по написанию кода на Python?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "PEP",
+            "correct" : true
+          },
+          {
+            "answer_id": 2,
+            "text" : ".NET",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "JIT",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "SSL",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 2,
+        "question_text": "При создании Салюта Сбер использовал NLP. Расшифруйте.",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Neuro linguistic programming",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Natural language processing",
+            "correct" : true
+          },
+          {
+            "answer_id": 3,
+            "text" : "Non Linear programming",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Просто маркетинговое название",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 3,
+        "question_text": "Что используется для автоматизации и развертывания?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Webpack",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Docker",
+            "correct" : true
+          },
+          {
+            "answer_id": 3,
+            "text" : "CMake",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "VPS",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 4,
+        "question_text": "Что такое кёрнинг?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Размер строки текста",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Спортивная игра",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Особое изменение межбуквенного интервала",
+            "correct" : true
+          },
+          {
+            "answer_id": 4,
+            "text" : "Межбуквенный интервал",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 5,
+        "question_text": "Какого редактора не существует?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Illumos",
+            "correct" : true
+          },
+          {
+            "answer_id": 2,
+            "text" : "Krita",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Photopea",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Affinity designer",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 6,
+        "question_text": "Какая цветовая модель применяется в печати?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "RGB",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "CMYK",
+            "correct" : true
+          },
+          {
+            "answer_id": 3,
+            "text" : "HSB",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Lab",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 7,
+        "question_text": "Какая игра получила награду “Игра года”?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Elder Ring",
+            "correct" : true
+          },
+          {
+            "answer_id": 2,
+            "text" : "Hades 2",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Mario",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Stray",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 8,
+        "question_text": "Как называется связанная с кроватями мини игра в Minecraft?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Войны на кроватях",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Драка подушками",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Sky Wars",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Bed Wars",
+            "correct" : true
+          }
+        ]
+      },{
+        "question_id": 9,
+        "question_text": "В какой игре в качестве валюты используются крышки?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "The Last of Us",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Fallout",
+            "correct" : true
+          },
+          {
+            "answer_id": 3,
+            "text" : "Sims",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "CS:GO",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 10,
+        "question_text": "Какой порт использует протокол SSH?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Порт Мурманск",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "22",
+            "correct" : true
+          },
+          {
+            "answer_id": 3,
+            "text" : "443",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "80",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 11,
+        "question_text": "Какую программу нужно использовать, чтобы составить “карту“ сети?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "ipconfig",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "nmap",
+            "correct" : true
+          },
+          {
+            "answer_id": 3,
+            "text" : "dirbuster",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "ping",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 12,
+        "question_text": "Какое семейство операционных систем использует демона в качестве маскота?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "MacOS",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Sailfish OS",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "DOS",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "BSD",
+            "correct" : true
+          }
+        ]
+      }
+    ]
+  }

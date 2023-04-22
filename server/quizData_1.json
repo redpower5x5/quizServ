@@ -1,0 +1,305 @@
+{
+    "questions": [
+      {
+        "question_id": 1,
+        "question_text": "У клиент-серверного приложения должен быть…?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Вход и выход",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Бэкенд и фронтенд",
+            "correct" : true
+          },
+          {
+            "answer_id": 3,
+            "text" : "Начало и конец",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Фулстек и софтскил",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 2,
+        "question_text": "Ближайший родственник Java с российскими корнями?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "JavaScript",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "C#",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Dart",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Kotlin",
+            "correct" : true
+          }
+        ]
+      },{
+        "question_id": 3,
+        "question_text": "Большая часть ОС Linux написана на…?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Java",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "C++",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "C",
+            "correct" : true
+          },
+          {
+            "answer_id": 4,
+            "text" : "C#",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 4,
+        "question_text": "Какой софт подходит для обработки видео?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Фотошоп",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Фигма",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Кейноут",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Блендер",
+            "correct" : true
+          }
+        ]
+      },{
+        "question_id": 5,
+        "question_text": "В каком году возник стиль киберпанк?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "1973",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "2003",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "1983",
+            "correct" : true
+          },
+          {
+            "answer_id": 4,
+            "text" : "1993",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 6,
+        "question_text": "Какой школы дизайна не существовало?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Баухаус",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Ауфраумен",
+            "correct" : true
+          },
+          {
+            "answer_id": 3,
+            "text" : "Вхутеин",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Вхутемас",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 7,
+        "question_text": "Какая игра принадлежит российской студии разработки?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Call of Duty: Modern Warfare",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Heroes Might and Magic III",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Diablo 2",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Atomic Heart",
+            "correct" : true
+          }
+        ]
+      },{
+        "question_id": 8,
+        "question_text": "Назовите знаменитую развлекательную игру из вселенной “Ведьмака”?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Шахматы",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Гвинт",
+            "correct" : true
+          },
+          {
+            "answer_id": 3,
+            "text" : "Нарды",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Манчкин",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 9,
+        "question_text": "Какую игру запускают на всех доступных устройствах?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Пасьянс",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Brawl Stars",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Doom",
+            "correct" : true
+          },
+          {
+            "answer_id": 4,
+            "text" : "Skyrim",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 10,
+        "question_text": "Разрешения в GNU/Linux бывают на чтение, запись и...?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Удаление",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Перемещение",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Исполнение",
+            "correct" : true
+          },
+          {
+            "answer_id": 4,
+            "text" : "Переименование",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 11,
+        "question_text": "Какой продукт из мира IT использует пингвина в качестве лого?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "FreeBSD",
+            "correct" : false
+          },
+          {
+            "answer_id": 2,
+            "text" : "Киндер Пингви",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Linux",
+            "correct" : true
+          },
+          {
+            "answer_id": 4,
+            "text" : "Астра Линукс",
+            "correct" : false
+          }
+        ]
+      },{
+        "question_id": 12,
+        "question_text": "DDOS атака на сайт проводится при помощи большого количества ...?",
+        "answers": [
+          {
+            "answer_id": 1,
+            "text" : "Запросов",
+            "correct" : true
+          },
+          {
+            "answer_id": 2,
+            "text" : "Вопросов",
+            "correct" : false
+          },
+          {
+            "answer_id": 3,
+            "text" : "Звонков",
+            "correct" : false
+          },
+          {
+            "answer_id": 4,
+            "text" : "Портов",
+            "correct" : false
+          }
+        ]
+      }
+    ]
+  }
