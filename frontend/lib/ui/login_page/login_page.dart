@@ -15,6 +15,8 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    loginPageBloc.editName.add('8w6VBYgcY9cGcH8Q');
+    loginPageBloc.pushTap.add(true);
     return Consumer<ThemeManager>(
         builder: (_, theme, __) => Scaffold(
             resizeToAvoidBottomInset: false,
